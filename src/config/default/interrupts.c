@@ -69,7 +69,7 @@ extern const H3DeviceVectors exception_table;
 extern void Dummy_Handler(void);
 
 /* Brief default interrupt handler for unused IRQs.*/
-void __attribute__((optimize("-O1"), long_call, noreturn, used))Dummy_Handler(void)
+void __attribute__((optimize("-O1"), long_call, used))Dummy_Handler(void)
 {
     while (true)
     {
@@ -141,7 +141,7 @@ const H3DeviceVectors exception_table=
     .pfnSERCOM2_Handler            = SERCOM2_Handler,
     .pfnSERCOM3_Handler            = SERCOM3_Handler,
     .pfnSERCOM4_Handler            = SERCOM4_Handler,
-    .pfnSERCOM5_Handler            = SERCOM5_Handler,
+    .pfnSERCOM5_Handler            = SERCOM5_USART_InterruptHandler,
     .pfnTCC0_Handler               = TCC0_Handler,
     .pfnTCC1_Handler               = TCC1_Handler,
     .pfnTCC2_Handler               = TCC2_Handler,

@@ -35,5 +35,5 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 41,PA28,,Available,,,,,,NORMAL
 45,PA30,,Available,,,,,,NORMAL
 46,PA31,,Available,,,,,,NORMAL
-47,PB02,,Available,,,,,,NORMAL
-48,PB03,,Available,,,,,,NORMAL
+47,PB02,,SERCOM5_PAD0,Digital,High Impedance,n/a,No,No,NORMAL
+48,PB03,,SERCOM5_PAD1,Digital,High Impedance,n/a,No,No,NORMAL
