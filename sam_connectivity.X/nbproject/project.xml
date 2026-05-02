@@ -10,6 +10,11 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>../src/config/default/system/time</sourceRootElem>
+                <sourceRootElem>../src/app/mcu_mgr</sourceRootElem>
+                <sourceRootElem>../src/app/led_mgr</sourceRootElem>
+                <sourceRootElem>../src/app/wifi_mgr</sourceRootElem>
+                <sourceRootElem>../src/app/sensor_mgr</sourceRootElem>
+                <sourceRootElem>../src/app/security_mgr</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

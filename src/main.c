@@ -35,31 +35,17 @@
 // Section: Main Entry Point
 // *****************************************************************************
 // *****************************************************************************
-#define APP_PRINT_BUFFER_SIZ    2048
-
-//static char printBuff[APP_PRINT_BUFFER_SIZ] __attribute__((aligned(4)));
-
-static void MyTask(void* args)
-{
-	while(1)
-	{
-    SYS_CONSOLE_PRINT("\rHello world\n");
-    vTaskDelay(pdMS_TO_TICKS(1000));
-	}
-}
 
 int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
 
-
-	  xTaskCreate(MyTask, "MyTask", 512, NULL, 1, NULL );
+    SYS_Tasks ( );
 
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
-        SYS_Tasks ( );
     }
 
     /* Execution should not come here during normal operation */

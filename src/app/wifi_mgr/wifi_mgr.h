@@ -45,7 +45,7 @@ extern "C" {
 // Section: Function Prototype
 // ******************************************************************************
 // ******************************************************************************
-
+void wifiMgr_moduleCallbackFromSphere( tMcuMgrSphereMsg* sphereMsg );
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

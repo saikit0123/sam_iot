@@ -45,6 +45,7 @@ extern "C" {
 // Section: Function Prototype
 // ******************************************************************************
 // ******************************************************************************
+void ledMgr_moduleCallbackFromSphere( tMcuMgrSphereMsg* sphereMsg );
 
 
 //DOM-IGNORE-BEGIN

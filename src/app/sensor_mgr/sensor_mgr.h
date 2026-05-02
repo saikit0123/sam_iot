@@ -45,7 +45,7 @@ extern "C" {
 // Section: Function Prototype
 // ******************************************************************************
 // ******************************************************************************
-
+void sensorMgr_moduleCallbackFromSphere( tMcuMgrSphereMsg* sphereMsg );
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

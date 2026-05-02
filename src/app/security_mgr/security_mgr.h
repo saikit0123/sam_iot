@@ -45,7 +45,7 @@ extern "C" {
 // Section: Function Prototype
 // ******************************************************************************
 // ******************************************************************************
-
+void securityMgr_moduleCallbackFromSphere( tMcuMgrSphereMsg* sphereMsg );
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
