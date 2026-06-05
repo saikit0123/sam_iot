@@ -13,8 +13,8 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 14,PA09,,Available,,,,,,NORMAL
 15,PA10,,Available,,,,,,NORMAL
 16,PA11,,Available,,,,,,NORMAL
-19,PB10,,Available,,,,,,NORMAL
-20,PB11,,Available,,,,,,NORMAL
+19,PB10,WDRV_WINC_RESETN,GPIO,Digital,Out,High,,,NORMAL
+20,PB11,WDRV_WINC_CHIP_EN,GPIO,Digital,Out,High,,,NORMAL
 21,PA12,,Available,,,,,,NORMAL
 22,PA13,,Available,,,,,,NORMAL
 23,PA14,,Available,,,,,,NORMAL

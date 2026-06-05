@@ -50,11 +50,16 @@
 #include <stdbool.h>
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
 #include "peripheral/evsys/plib_evsys.h"
+#include "peripheral/sercom/spi_master/plib_sercom0_spi_master.h"
 #include "system/command/sys_command.h"
+#include "driver/winc/include/wdrv_winc_api.h"
 #include "peripheral/port/plib_port.h"
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/sercom/usart/plib_sercom5_usart.h"
+#include "peripheral/eic/plib_eic.h"
+#include "peripheral/tc/plib_tc3.h"
+#include "system/time/sys_time.h"
 #include "system/console/sys_console.h"
 #include "system/console/src/sys_console_uart_definitions.h"
 #include "FreeRTOS.h"
@@ -194,11 +199,11 @@ Remarks:
 
 typedef struct
 {
-    SYS_MODULE_OBJ sysCommand;
-
-    SYS_MODULE_OBJ  sysConsole0;
-
+    SYS_MODULE_OBJ  drvWifiWinc;
     SYS_MODULE_OBJ  sysDebug;
+
+    SYS_MODULE_OBJ  sysTime;
+    SYS_MODULE_OBJ  sysConsole0;
 
 
 } SYSTEM_OBJECTS;
@@ -206,8 +211,6 @@ typedef struct
 // *****************************************************************************
 // *****************************************************************************
 // Section: extern declarations
-void SERCOM5_Handler( void );
-
 // *****************************************************************************
 // *****************************************************************************
 

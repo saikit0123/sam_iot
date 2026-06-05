@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/third_party/rtos/FreeRTOS/Source/FreeRTOS_tasks.c</file>
-            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/tasks.c</file>
+            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0/portmacro.h</file>
+            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/driver/winc/dev/gpio/wdrv_winc_eint.c</file>
+            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/interrupts.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/main.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/app/sensor_mgr/sensor_mgr.c</file>
-            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/system/console/src/sys_console.c</file>
+            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/driver/winc/drv/driver/nmspi.c</file>
+            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0/port.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/app/led_mgr/led_mgr.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/app/security_mgr/security_mgr.c</file>
         </group>

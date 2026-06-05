@@ -28,6 +28,7 @@
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
+extern SYSTEM_OBJECTS sysObj;
 
 // *****************************************************************************
 static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg );
@@ -54,6 +55,16 @@ static const tMcuMgrDispatchMsg dispatchMsg[] =
 static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg )
 {
     SYS_CONSOLE_PRINT("\r\n Wifi mgr init function\n");
+    
+    // init wifi driver
+    //WDRV_WINC_Tasks(sysObj.drvWifiWinc);
+
+    // WDRV_WINC_Status(sysObj.drvWifiWinc)
+
+    // WDRV_WINC_Open(0, (int)NULL)
+
+    // transit to init cloud
+
 };
 
 /* TODO:  Add any necessary local functions.

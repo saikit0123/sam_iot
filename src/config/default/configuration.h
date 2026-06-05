@@ -89,6 +89,22 @@ extern "C" {
 #define SYS_CMD_RTOS_STACK_SIZE                256
 #define SYS_CMD_RTOS_TASK_PRIORITY             1
 
+
+#define SYS_DEBUG_ENABLE
+#define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG
+#define SYS_DEBUG_BUFFER_DMA_READY
+#define SYS_DEBUG_USE_CONSOLE
+
+
+/* TIME System Service Configuration Options */
+#define SYS_TIME_INDEX_0                            (0)
+#define SYS_TIME_MAX_TIMERS                         (5)
+#define SYS_TIME_HW_COUNTER_WIDTH                   (16)
+#define SYS_TIME_HW_COUNTER_PERIOD                  (0xFFFFU)
+#define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
+#define SYS_TIME_CPU_CLOCK_FREQUENCY                (48000000)
+#define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (200)
+
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			(1U)
 #define SYS_CONSOLE_UART_MAX_INSTANCES 	   			(1U)
 #define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		(0U)
@@ -101,19 +117,38 @@ extern "C" {
 
 
 
-#define SYS_DEBUG_ENABLE
-#define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG
-#define SYS_DEBUG_BUFFER_DMA_READY
-#define SYS_DEBUG_USE_CONSOLE
-
-
-
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Driver Configuration
 // *****************************************************************************
 // *****************************************************************************
+/*** WiFi WINC Driver Configuration ***/
+#define WDRV_WINC_EIC_SOURCE
+#define WDRV_WINC_NETWORK_MODE_SOCKET
+#define WDRV_WINC_DEVICE_WINC1500
+#define WDRV_WINC_DEVICE_SPLIT_INIT
+#define WDRV_WINC_DEVICE_ENTERPRISE_CONNECT
+#define WDRV_WINC_DEVICE_EXT_CONNECT_PARAMS
+#define WDRV_WINC_DEVICE_BSS_ROAMING
+#define WDRV_WINC_DEVICE_FLEXIBLE_FLASH_MAP
+#define WDRV_WINC_DEVICE_DYNAMIC_BYPASS_MODE
+#define WDRV_WINC_DEVICE_WPA_SOFT_AP
+#define WDRV_WINC_DEVICE_CONF_NTP_SERVER
+#define WDRV_WINC_DEVICE_HOST_FILE_DOWNLOAD
+#define WDRV_WINC_DEVICE_SOFT_AP_EXT
+#define WDRV_WINC_DEVICE_MULTI_GAIN_TABLE
+#define WDRV_WINC_DEVICE_URL_TYPE           unsigned char
+#define WDRV_WINC_DEVICE_SCAN_STOP_ON_FIRST
+#define WDRV_WINC_DEVICE_DEPRECATE_WEP
+#define WDRV_WINC_DEVICE_OTA_SSL_OPTIONS
+#define WDRV_WINC_DEVICE_OTA_STATUS_EXTENDED
+#define WDRV_WINC_DEVICE_SCAN_SSID_LIST
+#define WDRV_WINC_DEVICE_USE_SYS_DEBUG
+/*** WiFi WINC Driver RTOS Configuration ***/
+#define DRV_WIFI_WINC_RTOS_STACK_SIZE           1024
+#define DRV_WIFI_WINC_RTOS_TASK_PRIORITY        1
+
 
 
 // *****************************************************************************

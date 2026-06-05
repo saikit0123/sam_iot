@@ -1,9 +1,6 @@
 build/default/production/_ext/1171490990/interrupts.o: \
- ../src/config/default/interrupts.c \
- ../src/config/default/device_vectors.h \
- ../src/config/default/interrupts.h ../src/config/default/definitions.h \
- ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
- ../src/config/default/device.h \
+ ../src/config/default/interrupts.c ../src/config/default/configuration.h \
+ ../src/config/default/user.h ../src/config/default/device.h \
  ../src/packs/ATSAMD21G18A_DFP/samd21g18a.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h \
@@ -69,28 +66,41 @@ build/default/production/_ext/1171490990/interrupts.o: \
  ../src/packs/ATSAMD21G18A_DFP/instance/usb.h \
  ../src/packs/ATSAMD21G18A_DFP/instance/wdt.h \
  ../src/packs/ATSAMD21G18A_DFP/pio/samd21g18a.h \
- ../src/config/default/device_cache.h ../src/config/default/device.h \
+ ../src/config/default/device_cache.h \
  ../src/config/default/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
+ ../src/config/default/device_vectors.h \
+ ../src/config/default/interrupts.h ../src/config/default/definitions.h \
+ ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
+ ../src/config/default/device.h \
  ../src/config/default/peripheral/evsys/plib_evsys.h \
+ ../src/config/default/peripheral/sercom/spi_master/plib_sercom0_spi_master.h \
+ ../src/config/default/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h \
  ../src/config/default/system/command/sys_command.h \
- ../src/config/default/configuration.h ../src/config/default/user.h \
+ ../src/config/default/configuration.h \
  ../src/config/default/system/system.h \
  ../src/config/default/system/system_common.h \
  ../src/config/default/system/system_module.h \
  ../src/config/default/system/system_common.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_api.h \
+ ../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h \
  ../src/config/default/peripheral/port/plib_port.h \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
  ../src/config/default/peripheral/sercom/usart/plib_sercom5_usart.h \
  ../src/config/default/peripheral/sercom/usart/plib_sercom_usart_common.h \
+ ../src/config/default/peripheral/eic/plib_eic.h \
+ ../src/config/default/peripheral/tc/plib_tc3.h \
+ ../src/config/default/peripheral/tc/plib_tc_common.h \
+ ../src/config/default/system/time/sys_time.h \
+ ../src/config/default/system/time/sys_time_definitions.h \
+ ../src/config/default/system/int/sys_int.h \
+ ../src/config/default/system/int/sys_int_mapping.h \
  ../src/config/default/system/console/sys_console.h \
  ../src/config/default/driver/driver.h \
  ../src/config/default/driver/driver_common.h \
  ../src/config/default/system/console/src/sys_console_local.h \
  ../src/config/default/system/console/src/sys_console_uart_definitions.h \
- ../src/config/default/system/int/sys_int.h \
- ../src/config/default/system/int/sys_int_mapping.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h \
  ../src/config/default/FreeRTOSConfig.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h \
@@ -110,13 +120,9 @@ build/default/production/_ext/1171490990/interrupts.o: \
  ../src/third_party/rtos/FreeRTOS/Source/include/semphr.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
  ../src/config/default/system/debug/sys_debug.h \
- ../src/config/default/system/console/sys_console.h ../src/app.h \
- ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0/portasm.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h
-../src/config/default/device_vectors.h:
-../src/config/default/interrupts.h:
-../src/config/default/definitions.h:
-../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
+ ../src/config/default/system/console/sys_console.h ../src/app.h
+../src/config/default/configuration.h:
+../src/config/default/user.h:
 ../src/config/default/device.h:
 ../src/packs/ATSAMD21G18A_DFP/samd21g18a.h:
 ../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h:
@@ -184,29 +190,41 @@ build/default/production/_ext/1171490990/interrupts.o: \
 ../src/packs/ATSAMD21G18A_DFP/instance/wdt.h:
 ../src/packs/ATSAMD21G18A_DFP/pio/samd21g18a.h:
 ../src/config/default/device_cache.h:
-../src/config/default/device.h:
 ../src/config/default/toolchain_specifics.h:
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
+../src/config/default/device_vectors.h:
+../src/config/default/interrupts.h:
+../src/config/default/definitions.h:
+../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
+../src/config/default/device.h:
 ../src/config/default/peripheral/evsys/plib_evsys.h:
+../src/config/default/peripheral/sercom/spi_master/plib_sercom0_spi_master.h:
+../src/config/default/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h:
 ../src/config/default/system/command/sys_command.h:
 ../src/config/default/configuration.h:
-../src/config/default/user.h:
 ../src/config/default/system/system.h:
 ../src/config/default/system/system_common.h:
 ../src/config/default/system/system_module.h:
 ../src/config/default/system/system_common.h:
+../src/config/default/driver/winc/include/wdrv_winc_api.h:
+../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h:
 ../src/config/default/peripheral/port/plib_port.h:
 ../src/config/default/peripheral/clock/plib_clock.h:
 ../src/config/default/peripheral/nvic/plib_nvic.h:
 ../src/config/default/peripheral/sercom/usart/plib_sercom5_usart.h:
 ../src/config/default/peripheral/sercom/usart/plib_sercom_usart_common.h:
+../src/config/default/peripheral/eic/plib_eic.h:
+../src/config/default/peripheral/tc/plib_tc3.h:
+../src/config/default/peripheral/tc/plib_tc_common.h:
+../src/config/default/system/time/sys_time.h:
+../src/config/default/system/time/sys_time_definitions.h:
+../src/config/default/system/int/sys_int.h:
+../src/config/default/system/int/sys_int_mapping.h:
 ../src/config/default/system/console/sys_console.h:
 ../src/config/default/driver/driver.h:
 ../src/config/default/driver/driver_common.h:
 ../src/config/default/system/console/src/sys_console_local.h:
 ../src/config/default/system/console/src/sys_console_uart_definitions.h:
-../src/config/default/system/int/sys_int.h:
-../src/config/default/system/int/sys_int_mapping.h:
 ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h:
 ../src/config/default/FreeRTOSConfig.h:
 ../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h:
@@ -228,5 +246,3 @@ build/default/production/_ext/1171490990/interrupts.o: \
 ../src/config/default/system/debug/sys_debug.h:
 ../src/config/default/system/console/sys_console.h:
 ../src/app.h:
-../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0/portasm.h:
-../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:

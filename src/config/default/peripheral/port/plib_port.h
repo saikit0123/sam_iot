@@ -65,6 +65,24 @@
 // *****************************************************************************
 // *****************************************************************************
 
+/*** Macros for WDRV_WINC_RESETN pin ***/
+#define WDRV_WINC_RESETN_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 10U))
+#define WDRV_WINC_RESETN_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 10U))
+#define WDRV_WINC_RESETN_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 10U))
+#define WDRV_WINC_RESETN_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 10U))
+#define WDRV_WINC_RESETN_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 10U))
+#define WDRV_WINC_RESETN_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 10U)) & 0x01U)
+#define WDRV_WINC_RESETN_PIN                  PORT_PIN_PB10
+
+/*** Macros for WDRV_WINC_CHIP_EN pin ***/
+#define WDRV_WINC_CHIP_EN_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 11U))
+#define WDRV_WINC_CHIP_EN_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 11U))
+#define WDRV_WINC_CHIP_EN_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 11U))
+#define WDRV_WINC_CHIP_EN_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 11U))
+#define WDRV_WINC_CHIP_EN_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 11U))
+#define WDRV_WINC_CHIP_EN_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 11U)) & 0x01U)
+#define WDRV_WINC_CHIP_EN_PIN                  PORT_PIN_PB11
+
 // *****************************************************************************
 /* PORT Group
 

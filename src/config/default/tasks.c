@@ -65,6 +65,7 @@
 // Section: RTOS "Tasks" Routine
 // *****************************************************************************
 // *****************************************************************************
+
 typedef void (*callbackFuncFromSphere)(tMcuMgrSphereMsg* sphereMsg );
 typedef unsigned long longLen;
 
@@ -177,7 +178,7 @@ void SYS_Tasks ( void )
             taskParams[i].priority,
             NULL
         );
-    }
+    }   
 
     /* Start RTOS Scheduler. */
     

@@ -68,12 +68,12 @@ typedef enum
 #define TASK_TBL_CFG \
     { COMPONENT_ID_LED_MGR,      "TaskLedMgr",      SYS_CMD_RTOS_STACK_SIZE, SYS_CMD_RTOS_TASK_PRIORITY, ledMgr_moduleCallbackFromSphere }, \
     { COMPONENT_ID_SECURITY_MGR, "TaskSecurityMgr", SYS_CMD_RTOS_STACK_SIZE, SYS_CMD_RTOS_TASK_PRIORITY, securityMgr_moduleCallbackFromSphere }, \
-    { COMPONENT_ID_SECURITY_MGR, "TaskSecurityMgr", SYS_CMD_RTOS_STACK_SIZE, SYS_CMD_RTOS_TASK_PRIORITY, securityMgr_moduleCallbackFromSphere }
+    { COMPONENT_ID_WIFI_MGR, "TaskWifiMgr", SYS_CMD_RTOS_STACK_SIZE, SYS_CMD_RTOS_TASK_PRIORITY, wifiMgr_moduleCallbackFromSphere }
 
 #define QUEUE_TBL_CFG \
     { COMPONENT_ID_LED_MGR, "ledQ", TASK_QUEUE_LOW }, \
     { COMPONENT_ID_SECURITY_MGR, "secQ", TASK_QUEUE_LOW }, \
-    { COMPONENT_ID_SECURITY_MGR, "secQ", TASK_QUEUE_LOW }
+    { COMPONENT_ID_WIFI_MGR, "wifiQ", TASK_QUEUE_LOW }
 
 // ******************************************************************************
 // ******************************************************************************

@@ -28,7 +28,6 @@
 // *****************************************************************************
 
 #include "app.h"
-#include "definitions.h"
 #include <stddef.h>                     // Defines NULL
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
@@ -113,6 +112,7 @@ void APP_Initialize ( void )
 
 void APP_Tasks ( void )
 {
+
     /* Check the application's current state. */
     switch ( appData.state )
     {

@@ -8,10 +8,7 @@ build/default/production/_ext/1624415188/port.o: \
  ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0/portmacro.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/list.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/mpu_syscall_numbers.h \
- ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0/portasm.h
+ ../src/third_party/rtos/FreeRTOS/Source/include/list.h
 ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h:
 ../src/config/default/FreeRTOSConfig.h:
 ../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h:
@@ -21,6 +18,3 @@ build/default/production/_ext/1624415188/port.o: \
 ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
 ../src/third_party/rtos/FreeRTOS/Source/include/task.h:
 ../src/third_party/rtos/FreeRTOS/Source/include/list.h:
-../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
-../src/third_party/rtos/FreeRTOS/Source/include/mpu_syscall_numbers.h:
-../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0/portasm.h:

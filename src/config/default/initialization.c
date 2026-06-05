@@ -83,6 +83,17 @@
 /* MISRA C-2012 Rule 11.1 */
 /* MISRA C-2012 Rule 11.3 */
 /* MISRA C-2012 Rule 11.8 */
+static const WDRV_WINC_SPI_CFG wdrvWincSpiInitData =
+{
+    .writeRead          = (WDRV_WINC_SPI_PLIB_WRITE_READ)SERCOM0_SPI_WriteRead,
+    .callbackRegister   = (WDRV_WINC_SPI_PLIB_CALLBACK_REGISTER)SERCOM0_SPI_CallbackRegister,
+};
+
+static const WDRV_WINC_SYS_INIT wdrvWincInitData = {
+    .pSPICfg    = &wdrvWincSpiInitData,
+    .intSrc     = EIC_PIN_2
+};
+
 
 
 
@@ -107,13 +118,41 @@ SYSTEM_OBJECTS sysObj;
 // *****************************************************************************
 // *****************************************************************************
 
-static const SYS_CMD_INIT sysCmdInit =
+const SYS_CMD_INIT sysCmdInit =
 {
     .moduleInit = {0},
-    .consoleCmdIOParam = (uint8_t) SYS_CMD_SINGLE_CHARACTER_READ_CONSOLE_IO_PARAM,
+    .consoleCmdIOParam = SYS_CMD_SINGLE_CHARACTER_READ_CONSOLE_IO_PARAM,
 	.consoleIndex = 0,
 };
 
+
+static const SYS_DEBUG_INIT debugInit =
+{
+    .moduleInit = {0},
+    .errorLevel = SYS_DEBUG_GLOBAL_ERROR_LEVEL,
+    .consoleIndex = 0,
+};
+
+
+// <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
+
+static const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
+    .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)TC3_TimerCallbackRegister,
+    .timerStart = (SYS_TIME_PLIB_START)TC3_TimerStart,
+    .timerStop = (SYS_TIME_PLIB_STOP)TC3_TimerStop,
+    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)TC3_TimerFrequencyGet,
+    .timerPeriodSet = (SYS_TIME_PLIB_PERIOD_SET)TC3_Timer16bitPeriodSet,
+    .timerCompareSet = (SYS_TIME_PLIB_COMPARE_SET)TC3_Timer16bitCompareSet,
+    .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)TC3_Timer16bitCounterGet,
+};
+
+static const SYS_TIME_INIT sysTimeInitData =
+{
+    .timePlib = &sysTimePlibAPI,
+    .hwTimerIntNum = TC3_IRQn,
+};
+
+// </editor-fold>
 // <editor-fold defaultstate="collapsed" desc="SYS_CONSOLE Instance 0 Initialization Data">
 
 
@@ -144,15 +183,6 @@ static const SYS_CONSOLE_INIT sysConsole0Init =
 // </editor-fold>
 
 
-static const SYS_DEBUG_INIT debugInit =
-{
-    .moduleInit = {0},
-    .errorLevel = SYS_DEBUG_GLOBAL_ERROR_LEVEL,
-    .consoleIndex = 0,
-};
-
-
-
 
 
 // *****************************************************************************
@@ -181,7 +211,8 @@ void SYS_Initialize ( void* data )
 
     NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_RWS(3UL);
 
-  	PORT_Initialize();
+  
+    PORT_Initialize();
 
     CLOCK_Initialize();
 
@@ -191,7 +222,13 @@ void SYS_Initialize ( void* data )
     NVMCTRL_Initialize( );
 
 
+    SERCOM0_SPI_Initialize();
+
     SERCOM5_USART_Initialize();
+
+    EIC_Initialize();
+
+    TC3_TimerInitialize();
 
 
 
@@ -200,19 +237,28 @@ void SYS_Initialize ( void* data )
     /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
     /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
 
+    /* Initialize the WINC Driver */
+    sysObj.drvWifiWinc = WDRV_WINC_Initialize(0, (SYS_MODULE_INIT*)&wdrvWincInitData);
 
-    sysObj.sysCommand = (uint32_t) SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
 
-    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
-     H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
-    sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
-   /* MISRAC 2012 deviation block end */
+    SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
+
     /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
      H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
         
     sysObj.sysDebug = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
 
     /* MISRAC 2012 deviation block end */
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+    H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        
+    sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
+    
+    /* MISRAC 2012 deviation block end */
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+     H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
+   /* MISRAC 2012 deviation block end */
 
 
     /* MISRAC 2012 deviation block end */
@@ -224,7 +270,6 @@ void SYS_Initialize ( void* data )
 
     /* MISRAC 2012 deviation block end */
 }
-
 
 /*******************************************************************************
  End of File
