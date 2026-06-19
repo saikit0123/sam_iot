@@ -52,7 +52,7 @@ static const tMcuMgrDispatchMsg dispatchMsg[] =
 // *****************************************************************************
 static void securityMgr_initFunc( tMcuMgrSphereMsg* sphereMsg )
 {
-    SYS_CONSOLE_PRINT("\r\n Security mgr init function\n");
+    SYS_CONSOLE_PRINT("\r\n Security mgr init function\r\n");
 };
 
 /* TODO:  Add any necessary local functions.

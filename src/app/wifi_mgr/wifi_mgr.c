@@ -22,6 +22,7 @@
 // *****************************************************************************
 #include "sys_tasks.h"
 #include "mcu_mgr.h"
+#include "wdrv_winc.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -29,6 +30,7 @@
 // *****************************************************************************
 // *****************************************************************************
 extern SYSTEM_OBJECTS sysObj;
+static DRV_HANDLE wdrvHandle;
 
 // *****************************************************************************
 static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg );
@@ -54,13 +56,21 @@ static const tMcuMgrDispatchMsg dispatchMsg[] =
 // *****************************************************************************
 static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg )
 {
-    SYS_CONSOLE_PRINT("\r\n Wifi mgr init function\n");
+    SYS_CONSOLE_PRINT("\r\n Wifi mgr init function\r\n");
     
     // init wifi driver
     WDRV_WINC_Tasks(sysObj.drvWifiWinc);
 
-    // WDRV_WINC_Status(sysObj.drvWifiWinc)
+    if (  SYS_STATUS_READY == WDRV_WINC_Status(sysObj.drvWifiWinc) )
+    {
+        SYS_CONSOLE_PRINT("\r\n Wifi mgr initialisation success\n");
+        wdrvHandle = WDRV_WINC_Open(0, (int)NULL);
+    }
 
+    if (DRV_HANDLE_INVALID != wdrvHandle)
+    {
+        // initialisation example task, osal timer
+    }
     // WDRV_WINC_Open(0, (int)NULL)
 
     // transit to init cloud

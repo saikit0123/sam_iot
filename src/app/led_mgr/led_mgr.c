@@ -53,7 +53,7 @@ static const tMcuMgrDispatchMsg dispatchMsg[] =
 // *****************************************************************************
 static void ledMgr_initFunc( tMcuMgrSphereMsg* sphereMsg )
 {
-    SYS_CONSOLE_PRINT("\r\n Led mgr init function\n");
+    SYS_CONSOLE_PRINT("\r\n Led mgr init function\r\n");
 };
 
 /* TODO:  Add any necessary local functions.

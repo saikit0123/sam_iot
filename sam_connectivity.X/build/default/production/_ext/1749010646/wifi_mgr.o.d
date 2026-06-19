@@ -122,7 +122,39 @@ build/default/production/_ext/1749010646/wifi_mgr.o: \
  ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
  ../src/config/default/system/debug/sys_debug.h \
  ../src/config/default/system/console/sys_console.h ../src/app.h \
- ../src/app/mcu_mgr/mcu_mgr.h ../src/app/mcu_mgr/msg_id.h
+ ../src/app/mcu_mgr/mcu_mgr.h ../src/app/mcu_mgr/msg_id.h \
+ ../src/config/default/driver/winc/include/wdrv_winc.h \
+ ../src/config/default/definitions.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_bssfind.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_common.h \
+ ../src/config/default/osal/osal.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_debug.h \
+ ../src/config/default/driver/winc/include/drv/driver/m2m_wifi.h \
+ ../src/config/default/driver/winc/include/drv/common/nm_common.h \
+ ../src/config/default/driver/winc/include/drv/bsp/nm_bsp.h \
+ ../src/config/default/driver/winc/include/drv/common/nm_debug.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_debug.h \
+ ../src/config/default/driver/winc/include/drv/driver/m2m_types.h \
+ ../src/config/default/driver/winc/include/drv/driver/nmdrv.h \
+ ../src/config/default/driver/winc/include/drv/driver/m2m_types.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_authctx.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_bssctx.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_assoc.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_systime.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_softap.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_custie.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_httpprovctx.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_sta.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_wps.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_socket.h \
+ ../src/config/default/driver/winc/include/wdrv_winc.h \
+ ../src/config/default/driver/winc/include/drv/socket/socket.h \
+ ../src/config/default/driver/winc/include/drv/socket/netinet_in.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_ssl.h \
+ ../src/config/default/driver/winc/include/drv/driver/m2m_ssl.h \
+ ../src/config/default/driver/winc/include/drv/driver/ecc_types.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_host_file.h \
+ ../src/config/default/driver/winc/include/drv/driver/m2m_ota.h
 ../src/config/default/sys_tasks.h:
 ../src/config/default/configuration.h:
 ../src/config/default/user.h:
@@ -250,3 +282,35 @@ build/default/production/_ext/1749010646/wifi_mgr.o: \
 ../src/app.h:
 ../src/app/mcu_mgr/mcu_mgr.h:
 ../src/app/mcu_mgr/msg_id.h:
+../src/config/default/driver/winc/include/wdrv_winc.h:
+../src/config/default/definitions.h:
+../src/config/default/driver/winc/include/wdrv_winc_bssfind.h:
+../src/config/default/driver/winc/include/wdrv_winc_common.h:
+../src/config/default/osal/osal.h:
+../src/config/default/driver/winc/include/wdrv_winc_debug.h:
+../src/config/default/driver/winc/include/drv/driver/m2m_wifi.h:
+../src/config/default/driver/winc/include/drv/common/nm_common.h:
+../src/config/default/driver/winc/include/drv/bsp/nm_bsp.h:
+../src/config/default/driver/winc/include/drv/common/nm_debug.h:
+../src/config/default/driver/winc/include/wdrv_winc_debug.h:
+../src/config/default/driver/winc/include/drv/driver/m2m_types.h:
+../src/config/default/driver/winc/include/drv/driver/nmdrv.h:
+../src/config/default/driver/winc/include/drv/driver/m2m_types.h:
+../src/config/default/driver/winc/include/wdrv_winc_authctx.h:
+../src/config/default/driver/winc/include/wdrv_winc_bssctx.h:
+../src/config/default/driver/winc/include/wdrv_winc_assoc.h:
+../src/config/default/driver/winc/include/wdrv_winc_systime.h:
+../src/config/default/driver/winc/include/wdrv_winc_softap.h:
+../src/config/default/driver/winc/include/wdrv_winc_custie.h:
+../src/config/default/driver/winc/include/wdrv_winc_httpprovctx.h:
+../src/config/default/driver/winc/include/wdrv_winc_sta.h:
+../src/config/default/driver/winc/include/wdrv_winc_wps.h:
+../src/config/default/driver/winc/include/wdrv_winc_socket.h:
+../src/config/default/driver/winc/include/wdrv_winc.h:
+../src/config/default/driver/winc/include/drv/socket/socket.h:
+../src/config/default/driver/winc/include/drv/socket/netinet_in.h:
+../src/config/default/driver/winc/include/wdrv_winc_ssl.h:
+../src/config/default/driver/winc/include/drv/driver/m2m_ssl.h:
+../src/config/default/driver/winc/include/drv/driver/ecc_types.h:
+../src/config/default/driver/winc/include/wdrv_winc_host_file.h:
+../src/config/default/driver/winc/include/drv/driver/m2m_ota.h:
