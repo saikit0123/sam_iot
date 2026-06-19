@@ -75,20 +75,21 @@ build/default/production/_ext/1954180691/wdrv_winc_bssfind.o: \
  ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
  ../src/config/default/device.h \
  ../src/config/default/peripheral/evsys/plib_evsys.h \
- ../src/config/default/peripheral/sercom/spi_master/plib_sercom0_spi_master.h \
- ../src/config/default/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_api.h \
+ ../src/config/default/system/system_module.h \
+ ../src/config/default/system/system_common.h \
+ ../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h \
+ ../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom4_spi_master.h \
+ ../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom_spi_master_common.h \
  ../src/config/default/system/command/sys_command.h \
  ../src/config/default/system/system.h \
  ../src/config/default/system/system_common.h \
- ../src/config/default/system/system_module.h \
- ../src/config/default/system/system_common.h \
- ../src/config/default/driver/winc/include/wdrv_winc_api.h \
- ../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h \
  ../src/config/default/peripheral/port/plib_port.h \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
  ../src/config/default/peripheral/sercom/usart/plib_sercom5_usart.h \
  ../src/config/default/peripheral/sercom/usart/plib_sercom_usart_common.h \
+ ../src/config/default/peripheral/sercom/spi_master/plib_sercom4_spi_master.h \
  ../src/config/default/peripheral/eic/plib_eic.h \
  ../src/config/default/peripheral/tc/plib_tc3.h \
  ../src/config/default/peripheral/tc/plib_tc_common.h \
@@ -229,20 +230,21 @@ build/default/production/_ext/1954180691/wdrv_winc_bssfind.o: \
 ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
 ../src/config/default/device.h:
 ../src/config/default/peripheral/evsys/plib_evsys.h:
-../src/config/default/peripheral/sercom/spi_master/plib_sercom0_spi_master.h:
-../src/config/default/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h:
+../src/config/default/driver/winc/include/wdrv_winc_api.h:
+../src/config/default/system/system_module.h:
+../src/config/default/system/system_common.h:
+../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h:
+../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom4_spi_master.h:
+../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom_spi_master_common.h:
 ../src/config/default/system/command/sys_command.h:
 ../src/config/default/system/system.h:
 ../src/config/default/system/system_common.h:
-../src/config/default/system/system_module.h:
-../src/config/default/system/system_common.h:
-../src/config/default/driver/winc/include/wdrv_winc_api.h:
-../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h:
 ../src/config/default/peripheral/port/plib_port.h:
 ../src/config/default/peripheral/clock/plib_clock.h:
 ../src/config/default/peripheral/nvic/plib_nvic.h:
 ../src/config/default/peripheral/sercom/usart/plib_sercom5_usart.h:
 ../src/config/default/peripheral/sercom/usart/plib_sercom_usart_common.h:
+../src/config/default/peripheral/sercom/spi_master/plib_sercom4_spi_master.h:
 ../src/config/default/peripheral/eic/plib_eic.h:
 ../src/config/default/peripheral/tc/plib_tc3.h:
 ../src/config/default/peripheral/tc/plib_tc_common.h:

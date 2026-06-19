@@ -320,7 +320,7 @@ static int8_t spi_cmd_rsp(uint8_t cmd, uint8_t clockless)
     {
         if (N_OK != spi_read(&rsp, 1))
         {
-            M2M_ERR("[spi_cmd_rsp]: Failed cmd response read, bus error...\r\n");
+            M2M_ERR("\r[spi_cmd_rsp]: Failed cmd response read, bus error...\r\n");
             return N_FAIL;
         }
     }
@@ -328,7 +328,7 @@ static int8_t spi_cmd_rsp(uint8_t cmd, uint8_t clockless)
 
     if (s8RetryCnt < 0)
     {
-        M2M_ERR("[spi_cmd_rsp]: Failed cmd response read\n");
+        M2M_ERR("\r[spi_cmd_rsp]: Failed cmd response read\n");
         return N_FAIL;
     }
     /**
@@ -340,7 +340,7 @@ static int8_t spi_cmd_rsp(uint8_t cmd, uint8_t clockless)
     {
         if (N_OK != spi_read(&rsp, 1))
         {
-            M2M_ERR("[spi_cmd_rsp]: Failed cmd response read, bus error...\r\n");
+            M2M_ERR("\r[spi_cmd_rsp]: Failed cmd response read, bus error...\r\n");
             return N_FAIL;
         }
     }
@@ -348,7 +348,7 @@ static int8_t spi_cmd_rsp(uint8_t cmd, uint8_t clockless)
 
     if (s8RetryCnt < 0)
     {
-        M2M_ERR("[spi_cmd_rsp]: Failed cmd response read\n");
+        M2M_ERR("\r[spi_cmd_rsp]: Failed cmd response read\n");
         return N_FAIL;
     }
 

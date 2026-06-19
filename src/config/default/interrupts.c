@@ -82,7 +82,6 @@ extern void PM_Handler                 ( void ) __attribute__((weak, noreturn, a
 extern void SYSCTRL_Handler            ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void WDT_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void RTC_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
-extern void EIC_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void NVMCTRL_Handler            ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void DMAC_Handler               ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void USB_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
@@ -91,11 +90,9 @@ extern void SERCOM0_Handler            ( void ) __attribute__((weak, noreturn, a
 extern void SERCOM1_Handler            ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void SERCOM2_Handler            ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void SERCOM3_Handler            ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
-extern void SERCOM4_Handler            ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void TCC0_Handler               ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void TCC1_Handler               ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void TCC2_Handler               ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
-extern void TC3_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void TC4_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void TC5_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void ADC_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
@@ -103,6 +100,7 @@ extern void AC_Handler                 ( void ) __attribute__((weak, noreturn, a
 extern void DAC_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void PTC_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
 extern void I2S_Handler                ( void ) __attribute__((weak, noreturn, alias("Dummy_Handler")));
+
 
 /* MISRAC 2012 deviation block end */
 
@@ -131,11 +129,11 @@ const H3DeviceVectors exception_table=
     .pfnDMAC_Handler               = DMAC_Handler,
     .pfnUSB_Handler                = USB_Handler,
     .pfnEVSYS_Handler              = EVSYS_Handler,
-    .pfnSERCOM0_Handler            = SERCOM0_SPI_InterruptHandler,
+    .pfnSERCOM0_Handler            = SERCOM0_Handler,
     .pfnSERCOM1_Handler            = SERCOM1_Handler,
     .pfnSERCOM2_Handler            = SERCOM2_Handler,
     .pfnSERCOM3_Handler            = SERCOM3_Handler,
-    .pfnSERCOM4_Handler            = SERCOM4_Handler,
+    .pfnSERCOM4_Handler            = SERCOM4_SPI_InterruptHandler,
     .pfnSERCOM5_Handler            = SERCOM5_USART_InterruptHandler,
     .pfnTCC0_Handler               = TCC0_Handler,
     .pfnTCC1_Handler               = TCC1_Handler,

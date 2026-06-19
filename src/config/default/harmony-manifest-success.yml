@@ -4,7 +4,7 @@
 
 
 project: sam_iot
-creation_date: 2026-06-06T23:01:58.234+08:00[Asia/Singapore]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2026-06-19T23:55:21.712+08:00[Asia/Singapore]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 11
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.5.2
@@ -15,8 +15,8 @@ compiler: XC32 5.00
 
 modules:
     - {name: "csp", version: "v3.18.0"}
-    - {name: "core", version: "v3.13.1"}
     - {name: "wireless_wifi", version: "v3.9.0"}
+    - {name: "core", version: "v3.13.1"}
     - {name: "CMSIS_5", version: "5.9.0"}
     - {name: "CMSIS-FreeRTOS", version: "v10.5.1"}
 

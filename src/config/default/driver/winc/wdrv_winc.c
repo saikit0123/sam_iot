@@ -551,7 +551,7 @@ static void _WDRV_WINC_MACEthernetMsgRecvCallback
         }
         else
         {
-            WDRV_DBG_ERROR_PRINT("MAC receive failed to lock event semaphore\r\n");
+            WDRV_DBG_INFORM_PRINT("MAC receive failed to lock event semaphore\r\n");
         }
     }
 
@@ -2257,7 +2257,7 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
                 break;
             }
 #endif
-            WDRV_DBG_INFORM_PRINT("WINC: Initializing...\r\n");
+            WDRV_DBG_INFORM_PRINT("\rWINC: Initializing...\r\n");
 
             /* Open SPI handling. */
             if (false == WDRV_WINC_SPIOpen())
@@ -2271,7 +2271,7 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
 #else
             if (M2M_SUCCESS != m2m_wifi_init_hold())
             {
-                WDRV_DBG_ERROR_PRINT("m2m_wifi_init_hold failed\r\n");
+                WDRV_DBG_INFORM_PRINT("m2m_wifi_init_hold failed\r\n");
                 pDcpt->pCtrl->extSysStat = WDRV_WINC_SYS_STATUS_ERROR_DEVICE_NOT_FOUND;
                 pDcpt->sysStat = SYS_STATUS_ERROR;
                 break;
@@ -2344,7 +2344,7 @@ void WDRV_WINC_Tasks(SYS_MODULE_OBJ object)
             if (M2M_SUCCESS != m2m_wifi_init_start(&wifiParam))
 #endif
             {
-                WDRV_DBG_ERROR_PRINT("m2m_wifi_init_start failed\r\n");
+                WDRV_DBG_INFORM_PRINT("m2m_wifi_init_start failed\r\n");
                 OSAL_SEM_Delete(&pDcpt->pCtrl->drvEventSemaphore);
                 pDcpt->pCtrl->extSysStat = WDRV_WINC_SYS_STATUS_ERROR_DEVICE_FAILURE;
                 pDcpt->sysStat = SYS_STATUS_ERROR;
@@ -3187,7 +3187,7 @@ bool WDRV_WINC_MACEventMaskSet
     }
     else
     {
-        WDRV_DBG_ERROR_PRINT("Event mask failed to lock event semaphore\r\n");
+        WDRV_DBG_INFORM_PRINT("Event mask failed to lock event semaphore\r\n");
 
         return false;
     }
@@ -3228,7 +3228,7 @@ bool WDRV_WINC_MACEventAcknowledge(DRV_HANDLE handle, TCPIP_MAC_EVENT macEvents)
     }
     else
     {
-        WDRV_DBG_ERROR_PRINT("Event ACK failed to lock event semaphore\r\n");
+        WDRV_DBG_INFORM_PRINT("Event ACK failed to lock event semaphore\r\n");
 
         return false;
     }
@@ -3270,7 +3270,7 @@ TCPIP_MAC_EVENT WDRV_WINC_MACEventPendingGet(DRV_HANDLE handle)
     }
     else
     {
-        WDRV_DBG_ERROR_PRINT("Event get failed to lock event semaphore\r\n");
+        WDRV_DBG_INFORM_PRINT("Event get failed to lock event semaphore\r\n");
 
         return TCPIP_MAC_EV_NONE;
     }

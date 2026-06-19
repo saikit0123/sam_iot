@@ -40,9 +40,10 @@ Microchip or any third party.
 #ifndef _WDRV_WINC_SPI_H
 #define _WDRV_WINC_SPI_H
 
+#include "../../../../../peripheral/sercom/spi_master/plib_sercom4_spi_master.h"
 typedef bool (*WDRV_WINC_SPI_PLIB_WRITE_READ)(void*, size_t, void *, size_t);
 
-typedef void (*WDRV_WINC_SPI_PLIB_CALLBACK_REGISTER)(SERCOM_SPI_CALLBACK, uintptr_t);
+typedef void (*WDRV_WINC_SPI_PLIB_CALLBACK_REGISTER)(SERCOM_SPI_CALLBACK callback, uintptr_t);
 
 // *****************************************************************************
 /*  SPI Speed Modes

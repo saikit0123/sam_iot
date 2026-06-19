@@ -83,6 +83,26 @@
 #define WDRV_WINC_CHIP_EN_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 11U)) & 0x01U)
 #define WDRV_WINC_CHIP_EN_PIN                  PORT_PIN_PB11
 
+/*** Macros for WINC_SPI_MOSI pin ***/
+#define WINC_SPI_MOSI_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 12U)) & 0x01U)
+#define WINC_SPI_MOSI_PIN                  PORT_PIN_PA12
+
+/*** Macros for WINC_SPI_SCK pin ***/
+#define WINC_SPI_SCK_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 13U)) & 0x01U)
+#define WINC_SPI_SCK_PIN                  PORT_PIN_PA13
+
+/*** Macros for WINC_SPI_CS pin ***/
+#define WINC_SPI_CS_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 14U)) & 0x01U)
+#define WINC_SPI_CS_PIN                  PORT_PIN_PA14
+
+/*** Macros for WINC_SPI_MISO pin ***/
+#define WINC_SPI_MISO_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 15U)) & 0x01U)
+#define WINC_SPI_MISO_PIN                  PORT_PIN_PA15
+
+/*** Macros for WINC_INT_EIC_EXTINT2 pin ***/
+#define WINC_INT_EIC_EXTINT2_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18U)) & 0x01U)
+#define WINC_INT_EIC_EXTINT2_PIN                  PORT_PIN_PA18
+
 // *****************************************************************************
 /* PORT Group
 

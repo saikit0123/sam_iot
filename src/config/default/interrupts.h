@@ -64,7 +64,7 @@ void vPortSVCHandler (void);
 void xPortPendSVHandler (void);
 void xPortSysTickHandler (void);
 void EIC_InterruptHandler (void);
-void SERCOM0_SPI_InterruptHandler (void);
+void SERCOM4_SPI_InterruptHandler (void);
 void SERCOM5_USART_InterruptHandler (void);
 void TC3_TimerInterruptHandler (void);
 
