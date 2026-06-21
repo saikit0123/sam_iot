@@ -71,7 +71,6 @@ static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg )
     {
         // initialisation example task, osal timer
     }
-    // WDRV_WINC_Open(0, (int)NULL)
 
     // transit to init cloud
 
