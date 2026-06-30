@@ -15,6 +15,7 @@
                 <sourceRootElem>../src/app/wifi_mgr</sourceRootElem>
                 <sourceRootElem>../src/app/sensor_mgr</sourceRootElem>
                 <sourceRootElem>../src/app/security_mgr</sourceRootElem>
+                <sourceRootElem>../src/app/utils/fsm/inc_folder</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

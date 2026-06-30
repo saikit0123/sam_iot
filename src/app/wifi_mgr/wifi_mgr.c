@@ -23,6 +23,8 @@
 #include "sys_tasks.h"
 #include "mcu_mgr.h"
 #include "wdrv_winc.h"
+#include "fsm.h"
+#include "wifi_mgr.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -32,9 +34,49 @@
 extern SYSTEM_OBJECTS sysObj;
 static DRV_HANDLE wdrvHandle;
 
+
 // *****************************************************************************
 static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg );
+static void wifiMgr_wincInit();
 
+static const tFsmLookUp wifiMgrFsm[] =
+{
+    [WIFI_MGR_WINC_INIT] = 
+    {
+        .entryFunc = wifiMgr_wincInit,
+        .doFunc = NULL,
+        .doFuncElement = 0,
+        .exitFunc = NULL
+    },
+    [WIFI_MGR_CLOUD_WIFI_INIT] = 
+    {
+        .entryFunc = NULL,
+        .doFunc = NULL,
+        .doFuncElement = 0,
+        .exitFunc = NULL
+    },
+    [WIFI_MGR_CLOUD_WIFI_CONFIGURE] = 
+    {
+        .entryFunc = NULL,
+        .doFunc = NULL,
+        .doFuncElement = 0,
+        .exitFunc = NULL
+    },
+    [WIFI_MGR_CLOUD_WIFI_CONNECTING] = 
+    {
+        .entryFunc = NULL,
+        .doFunc = NULL,
+        .doFuncElement = 0,
+        .exitFunc = NULL
+    },
+    [WIFI_MGR_CLOUD_WIFI_CONNECTED] = 
+    {
+        .entryFunc = NULL,
+        .doFunc = NULL,
+        .doFuncElement = 0,
+        .exitFunc = NULL
+    }
+};
 
 // *****************************************************************************
 // *****************************************************************************
@@ -71,13 +113,17 @@ static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg )
     {
         // initialisation example task, osal timer
     }
-
+    
+    fsm_init(wifiMgrFsm);
     // transit to init cloud
 
 };
 
-/* TODO:  Add any necessary local functions.
-*/
+static void wifiMgr_wincInit()
+{
+    SYS_CONSOLE_PRINT("\r\n Wifi mgr winc init function\r\n");
+    
+}
 
 
 // *****************************************************************************

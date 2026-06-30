@@ -182,6 +182,8 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
+      <logicalFolder name="inc_folder" displayName="inc_folder" projectFiles="true">
+      </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
         <logicalFolder name="ATSAMD21G18A_DFP"
                        displayName="ATSAMD21G18A_DFP"
@@ -443,6 +445,11 @@
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/queue.c</itemPath>
         </logicalFolder>
       </logicalFolder>
+      <logicalFolder name="fsm" displayName="fsm" projectFiles="true">
+        <logicalFolder name="inc_folder" displayName="inc_folder" projectFiles="true">
+        </logicalFolder>
+        <itemPath>../src/app/utils/fsm/fsm.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="led_mgr" displayName="led_mgr" projectFiles="true">
         <itemPath>../src/app/led_mgr/led_mgr.c</itemPath>
       </logicalFolder>
@@ -469,6 +476,7 @@
     <Elem>../src/app/wifi_mgr</Elem>
     <Elem>../src/app/sensor_mgr</Elem>
     <Elem>../src/app/security_mgr</Elem>
+    <Elem>../src/app/utils/fsm/inc_folder</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -517,7 +525,6 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="cast-align" value="false"/>
         <property key="code-model" value="default"/>
         <property key="const-model" value="default"/>
@@ -532,7 +539,7 @@
         <property key="exclude-floating-point" value="false"/>
         <property key="expand-pragma-config" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/config/default/driver/winc/include/;../src/config/default/driver/winc/include/dev;../src/config/default/driver/winc/include/drv/bsp;../src/config/default/driver/winc/include/drv/bsp/include;../src/config/default/driver/winc/include/drv/common;../src/config/default/driver/winc/include/drv/driver;../src/config/default/driver/winc/include/drv/socket;../src/config/default/driver/winc/include/drv/spi_flash;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0;..\src\app\led_mgr;..\src\app\mcu_mgr;..\src\app\security_mgr;..\src\app\sensor_mgr;..\src\app\wifi_mgr;..\src\config\default\peripheral\sercom\spi_master"/>
+                  value="../src;../src/config/default;../src/config/default/driver/winc/include/;../src/config/default/driver/winc/include/dev;../src/config/default/driver/winc/include/drv/bsp;../src/config/default/driver/winc/include/drv/bsp/include;../src/config/default/driver/winc/include/drv/common;../src/config/default/driver/winc/include/drv/driver;../src/config/default/driver/winc/include/drv/socket;../src/config/default/driver/winc/include/drv/spi_flash;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0;..\src\app\led_mgr;..\src\app\mcu_mgr;..\src\app\security_mgr;..\src\app\sensor_mgr;..\src\app\wifi_mgr;..\src\config\default\peripheral\sercom\spi_master;..\src\app\utils\fsm\inc_folder"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -596,7 +603,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -642,7 +648,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
