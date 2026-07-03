@@ -16,6 +16,7 @@
                 <sourceRootElem>../src/app/sensor_mgr</sourceRootElem>
                 <sourceRootElem>../src/app/security_mgr</sourceRootElem>
                 <sourceRootElem>../src/app/utils/fsm/inc_folder</sourceRootElem>
+                <sourceRootElem>../src/app/utils/timer</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

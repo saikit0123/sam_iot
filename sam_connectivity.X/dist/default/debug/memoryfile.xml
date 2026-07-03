@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/debug/sam_connectivity.X.debug.elf">
+    <memory name="program">
+      <units>bytes</units>
+      <length>262144</length>
+      <used>43659</used>
+      <free>218485</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>32768</length>
+      <used>12838</used>
+      <free>19930</free>
+    </memory>
+  </executable>
+</project>

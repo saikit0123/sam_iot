@@ -467,6 +467,7 @@
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/config/default/pin_configurations.csv</itemPath>
       <itemPath>../src/app.c</itemPath>
+      <itemPath>../src/app/utils/timer/timer_control.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -477,6 +478,7 @@
     <Elem>../src/app/sensor_mgr</Elem>
     <Elem>../src/app/security_mgr</Elem>
     <Elem>../src/app/utils/fsm/inc_folder</Elem>
+    <Elem>../src/app/utils/timer</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -492,8 +494,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
         <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -539,7 +541,7 @@
         <property key="exclude-floating-point" value="false"/>
         <property key="expand-pragma-config" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/config/default/driver/winc/include/;../src/config/default/driver/winc/include/dev;../src/config/default/driver/winc/include/drv/bsp;../src/config/default/driver/winc/include/drv/bsp/include;../src/config/default/driver/winc/include/drv/common;../src/config/default/driver/winc/include/drv/driver;../src/config/default/driver/winc/include/drv/socket;../src/config/default/driver/winc/include/drv/spi_flash;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0;..\src\app\led_mgr;..\src\app\mcu_mgr;..\src\app\security_mgr;..\src\app\sensor_mgr;..\src\app\wifi_mgr;..\src\config\default\peripheral\sercom\spi_master;..\src\app\utils\fsm\inc_folder"/>
+                  value="../src;../src/config/default;../src/config/default/driver/winc/include/;../src/config/default/driver/winc/include/dev;../src/config/default/driver/winc/include/drv/bsp;../src/config/default/driver/winc/include/drv/bsp/include;../src/config/default/driver/winc/include/drv/common;../src/config/default/driver/winc/include/drv/driver;../src/config/default/driver/winc/include/drv/socket;../src/config/default/driver/winc/include/drv/spi_flash;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0;..\src\app\led_mgr;..\src\app\mcu_mgr;..\src\app\security_mgr;..\src\app\sensor_mgr;..\src\app\wifi_mgr;..\src\config\default\peripheral\sercom\spi_master;..\src\app\utils\fsm\inc_folder;..\src\app\utils\timer\inc_folder"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
