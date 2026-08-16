@@ -48,8 +48,9 @@ typedef struct
     uint16_t timer;
     bool oneShot;
     TimerCallbackFunction_t callbackFunc;
+    uint16_t source;
+    uint16_t msgId;
 } tTimer_details;
-
 
 // ******************************************************************************
 // ******************************************************************************
@@ -59,11 +60,13 @@ typedef struct
 
 TimerHandle_t createOsalTimer(tTimer_details* xOsalTimer);
 
-void startTimer(TimerHandle_t* xOsalTimer);
+void startTimer(TimerHandle_t xOsalTimer);
 
-void changeTimerPeriod(TimerHandle_t* xOsalTimer, uint16_t duration);
+void changeTimerPeriod(TimerHandle_t xOsalTimer, uint16_t duration);
 
-void stopTimer(TimerHandle_t* xOsalTimer);
+void stopTimer(TimerHandle_t xOsalTimer);
+
+void commonTimerCallbackFunc( TimerHandle_t xTimer );
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

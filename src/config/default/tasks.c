@@ -189,6 +189,11 @@ void SYS_Tasks ( void )
 
 }
 
+QueueHandle_t sysTaskGetQueue(tMcuMgrComponentId srcId)
+{
+    return queueParams.queueHandle[srcId];
+}
+
 /*******************************************************************************
  End of File
  */

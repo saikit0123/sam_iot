@@ -38,6 +38,8 @@ extern "C" {
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
+#define FUNC_ELEMENT(element)  (sizeof(element)/sizeof(element[0]))
+
 typedef enum
 {
     WIFI_MGR_WINC_INIT,

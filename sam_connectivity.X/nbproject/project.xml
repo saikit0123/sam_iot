@@ -17,6 +17,7 @@
                 <sourceRootElem>../src/app/security_mgr</sourceRootElem>
                 <sourceRootElem>../src/app/utils/fsm/inc_folder</sourceRootElem>
                 <sourceRootElem>../src/app/utils/timer</sourceRootElem>
+                <sourceRootElem>../src/app/utils/osal_sphere</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

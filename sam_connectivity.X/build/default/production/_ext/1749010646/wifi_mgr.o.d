@@ -123,6 +123,7 @@ build/default/production/_ext/1749010646/wifi_mgr.o: \
  ../src/config/default/system/debug/sys_debug.h \
  ../src/config/default/system/console/sys_console.h ../src/app.h \
  ../src/app/mcu_mgr/mcu_mgr.h ../src/app/mcu_mgr/msg_id.h \
+ ../src/app/utils/fsm/inc_folder/fsm.h \
  ../src/config/default/driver/winc/include/wdrv_winc.h \
  ../src/config/default/definitions.h \
  ../src/config/default/driver/winc/include/wdrv_winc_bssfind.h \
@@ -155,7 +156,9 @@ build/default/production/_ext/1749010646/wifi_mgr.o: \
  ../src/config/default/driver/winc/include/drv/driver/ecc_types.h \
  ../src/config/default/driver/winc/include/wdrv_winc_host_file.h \
  ../src/config/default/driver/winc/include/drv/driver/m2m_ota.h \
- ../src/app/utils/fsm/inc_folder/fsm.h ../src/app/wifi_mgr/wifi_mgr.h
+ ../src/app/wifi_mgr/wifi_mgr.h ../src/app/wifi_mgr/cloud_task.h \
+ ../src/app/utils/timer/inc_folder/timer_control.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/timers.h
 ../src/config/default/sys_tasks.h:
 ../src/config/default/configuration.h:
 ../src/config/default/user.h:
@@ -283,6 +286,7 @@ build/default/production/_ext/1749010646/wifi_mgr.o: \
 ../src/app.h:
 ../src/app/mcu_mgr/mcu_mgr.h:
 ../src/app/mcu_mgr/msg_id.h:
+../src/app/utils/fsm/inc_folder/fsm.h:
 ../src/config/default/driver/winc/include/wdrv_winc.h:
 ../src/config/default/definitions.h:
 ../src/config/default/driver/winc/include/wdrv_winc_bssfind.h:
@@ -315,5 +319,7 @@ build/default/production/_ext/1749010646/wifi_mgr.o: \
 ../src/config/default/driver/winc/include/drv/driver/ecc_types.h:
 ../src/config/default/driver/winc/include/wdrv_winc_host_file.h:
 ../src/config/default/driver/winc/include/drv/driver/m2m_ota.h:
-../src/app/utils/fsm/inc_folder/fsm.h:
 ../src/app/wifi_mgr/wifi_mgr.h:
+../src/app/wifi_mgr/cloud_task.h:
+../src/app/utils/timer/inc_folder/timer_control.h:
+../src/third_party/rtos/FreeRTOS/Source/include/timers.h:
