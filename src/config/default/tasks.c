@@ -53,86 +53,55 @@
 #include "configuration.h"
 #include "definitions.h"
 #include "sys_tasks.h"
-#include "mcu_mgr.h"
-#include "led_mgr.h"
-#include "wifi_mgr.h"
-#include "sensor_mgr.h"
-#include "security_mgr.h"
-#include "msg_id.h"
+
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: RTOS "Tasks" Routine
 // *****************************************************************************
 // *****************************************************************************
-
-typedef void (*callbackFuncFromSphere)(tMcuMgrSphereMsg* sphereMsg );
-typedef unsigned long longLen;
-
-typedef struct
+TaskHandle_t xSYS_CMD_Tasks;
+void lSYS_CMD_Tasks(  void *pvParameters  )
 {
-    uint8_t taskId;
-    char* queueName;
-    longLen queueLength;
-} tQueueConfig_t;
-
-typedef struct
-{
-    QueueHandle_t queueHandle[COMPONENT_ID_MAX];
-    const tQueueConfig_t* queueConfig;
-} tQueueParams_t;
-
-static const tQueueConfig_t queueTbl[]=
-{
-    QUEUE_TBL_CFG
-};
-
-static tQueueParams_t queueParams = 
-{
-    .queueHandle = { NULL },
-    .queueConfig = queueTbl
-};
-
-typedef struct
-{
-    uint8_t taskId;
-    char* taskName;
-    uint32_t stackSize;
-    longLen priority;
-    callbackFuncFromSphere callbackFunc;
-} tTaskParams_t;
-
-static tTaskParams_t taskParams[] =
-{
-    TASK_TBL_CFG
-};
-
-static void common_dispatch_tasks( void *pvParameters )
-{
-    uint8_t taskId = *(uint8_t*)pvParameters;
-
-    while(true)
+    while(1)
     {
-        //vTaskDelay(100U / portTICK_PERIOD_MS);
-
-        tMcuMgrSphereMsg* sphereMsg = malloc(sizeof(tMcuMgrSphereMsg) + 4*(sizeof(uint8_t))); 
-
-        if( taskId < COMPONENT_ID_MAX )
-        {
-            BaseType_t xStatus = xQueueReceive(queueParams.queueHandle[taskId], sphereMsg, pdMS_TO_TICKS(100));
-            // dispatch to the function
-            if( xStatus == pdPASS )
-            {
-                SYS_CONSOLE_PRINT("\rReceived value is :%d and task id is %d\n", sphereMsg->msgId, taskId );
-                if(taskParams[taskId].callbackFunc != NULL)
-                {
-                    taskParams[taskId].callbackFunc(sphereMsg);
-                }
-            }
-        }
-        free(sphereMsg);
+        SYS_CMD_Tasks();
+        vTaskDelay(10 / portTICK_PERIOD_MS);
     }
 }
+
+
+static void _WDRV_WINC_Tasks(void *pvParameters)
+{
+    while(1)
+    {
+        SYS_STATUS status;
+
+        WDRV_WINC_Tasks(sysObj.drvWifiWinc);
+
+        status = WDRV_WINC_Status(sysObj.drvWifiWinc);
+
+        if ((SYS_STATUS_ERROR == status) || (SYS_STATUS_UNINITIALIZED == status))
+        {
+            vTaskDelay(50 / portTICK_PERIOD_MS);
+        }
+    }
+}
+
+/* Handle for the APP_Tasks. */
+TaskHandle_t xAPP_Tasks;
+
+static void lAPP_Tasks(  void *pvParameters  )
+{   
+    while(true)
+    {
+        APP_Tasks();
+        vTaskDelay(1000U / portTICK_PERIOD_MS);
+    }
+}
+
+
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -147,38 +116,48 @@ static void common_dispatch_tasks( void *pvParameters )
   Remarks:
     See prototype in system/common/sys_module.h.
 */
-
 void SYS_Tasks ( void )
 {
-
-    // create osal queue
-    // send PT_SPHERE_START_REQ_ID
-
-    for( uint8_t i=0; i<COMPONENT_ID_MAX; i++)
-    {
-        tMcuMgrSphereMsg sphereMsg = 
-        {
-            .dst = taskParams[i].taskId,
-            .src = taskParams[i].taskId,
-            .msgId = PT_SPHERE_START_REQ_ID,
-            .length = 0U,
-            .payload = NULL,
-        };
-
-        // create queue
-        queueParams.queueHandle[i] = xQueueCreate(queueParams.queueConfig[i].queueLength, sizeof(sphereMsg) + 4*sizeof(uint8_t));
-
-        xQueueSend(queueParams.queueHandle[i], &sphereMsg, pdMS_TO_TICKS(100));
+    /* Maintain system services */
     
-        // create task
-        (void) xTaskCreate( common_dispatch_tasks,
-            taskParams[i].taskName,
-            taskParams[i].stackSize,
-            &taskParams[i].taskId,
-            taskParams[i].priority,
-            NULL
-        );
-    }   
+    (void) xTaskCreate( lSYS_CMD_Tasks,
+        "SYS_CMD_TASKS",
+        SYS_CMD_RTOS_STACK_SIZE,
+        (void*)NULL,
+        SYS_CMD_RTOS_TASK_PRIORITY,
+        &xSYS_CMD_Tasks
+    );
+
+
+
+
+
+    /* Maintain Device Drivers */
+        xTaskCreate( _WDRV_WINC_Tasks,
+        "WDRV_WINC_Tasks",
+        DRV_WIFI_WINC_RTOS_STACK_SIZE,
+        (void*)NULL,
+        DRV_WIFI_WINC_RTOS_TASK_PRIORITY,
+        (TaskHandle_t*)NULL
+    );
+
+
+
+
+    /* Maintain Middleware & Other Libraries */
+    
+
+    /* Maintain the application's state machine. */
+        /* Create OS Thread for APP_Tasks. */
+    (void) xTaskCreate((TaskFunction_t) lAPP_Tasks,
+                "APP_Tasks",
+                512,
+                NULL,
+                1,
+                &xAPP_Tasks);
+
+
+
 
     /* Start RTOS Scheduler. */
     
@@ -187,11 +166,6 @@ void SYS_Tasks ( void )
      ***********************************************************************/
     vTaskStartScheduler(); /* This function never returns. */
 
-}
-
-QueueHandle_t sysTaskGetQueue(tMcuMgrComponentId srcId)
-{
-    return queueParams.queueHandle[srcId];
 }
 
 /*******************************************************************************

@@ -24,6 +24,7 @@
 // *****************************************************************************
 // *****************************************************************************
 #include "wdrv_winc.h"
+#include "socket.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -38,7 +39,34 @@ extern "C" {
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
+typedef enum
+{
+    WIFI_STATUS_UNKNOWN          = 0,
+    WIFI_STATUS_MESSAGE_RECEIVED = 1,
+    WIFI_STATUS_MESSAGE_SENT     = 2,
+    WIFI_STATUS_TIMEOUT          = 3,
+    WIFI_STATUS_ERROR            = 4
+} cloudTask_status;
 
+typedef struct
+{
+    SOCKET   socket;
+    uint32_t address;
+    uint16_t port;
+} cloudTaskConnection;
+
+typedef struct socket_connection
+{
+    SOCKET   socket;
+    uint32_t address;
+    uint16_t port;
+} socket_connection;
+
+typedef struct
+{
+    int         code;
+    const char* name;
+} ErrorInfo;
 
 // ******************************************************************************
 // ******************************************************************************

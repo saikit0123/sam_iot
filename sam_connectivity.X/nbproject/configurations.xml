@@ -71,6 +71,66 @@
             <itemPath>../src/config/default/driver/driver.h</itemPath>
             <itemPath>../src/config/default/driver/driver_common.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="library" displayName="library" projectFiles="true">
+            <logicalFolder name="cryptoauthlib"
+                           displayName="cryptoauthlib"
+                           projectFiles="true">
+              <logicalFolder name="atcacert" displayName="atcacert" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_date.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_def.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_pem.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_client.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_host_hw.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_host_sw.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_check_config.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_der.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="calib" displayName="calib" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_config_check.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_basic.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_execution.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_aes_gcm.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_command.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
+                <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
+                  <itemPath>../src/config/default/library/cryptoauthlib/crypto/hashes/sha1_routines.h</itemPath>
+                  <itemPath>../src/config/default/library/cryptoauthlib/crypto/hashes/sha2_routines.h</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/crypto_config_check.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="hal" displayName="hal" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/hal/atca_hal.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="host" displayName="host" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/host/atca_host.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/host/atca_host_config_check.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="jwt" displayName="jwt" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/jwt/atca_jwt.h</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_config.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_debug.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/cryptoauthlib.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_bool.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_status.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_config_check.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_cfgs.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_compiler.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_platform.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_device.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_helpers.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_basic.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_devtypes.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_version.h</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_iface.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
           <logicalFolder name="osal" displayName="osal" projectFiles="true">
             <itemPath>../src/config/default/osal/osal_definitions.h</itemPath>
             <itemPath>../src/config/default/osal/osal.h</itemPath>
@@ -357,6 +417,87 @@
               <itemPath>../src/config/default/driver/winc/wdrv_winc_httpprovctx.c</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="library" displayName="library" projectFiles="true">
+            <logicalFolder name="cryptoauthlib"
+                           displayName="cryptoauthlib"
+                           projectFiles="true">
+              <logicalFolder name="atcacert" displayName="atcacert" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_date.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_pem.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_def.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_client.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_host_sw.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_der.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/atcacert/atcacert_host_hw.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="calib" displayName="calib" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_mac.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_aes.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_sha.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_basic.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_execution.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_gendig.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_lock.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_info.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_kdf.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_updateextra.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_write.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_privwrite.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_sign.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_checkmac.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_derivekey.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_secureboot.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_ecdh.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_aes_gcm.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_nonce.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_selftest.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_counter.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_read.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_delete.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_verify.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_genkey.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_random.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_helpers.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_command.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/calib/calib_hmac.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
+                <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
+                  <itemPath>../src/config/default/library/cryptoauthlib/crypto/hashes/sha1_routines.c</itemPath>
+                  <itemPath>../src/config/default/library/cryptoauthlib/crypto/hashes/sha2_routines.c</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_pad.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha1.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ccm.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbcmac.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cbc.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_pbkdf2.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes_cmac.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_sw_sha2.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes_ctr.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="hal" displayName="hal" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/hal/atca_hal.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_freertos.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_harmony_init.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_gpio_harmony.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_cortex_m_delay.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="host" displayName="host" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/host/atca_host.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="jwt" displayName="jwt" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/jwt/atca_jwt.c</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_debug.c</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_cfgs.c</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_utils_sizes.c</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_device.c</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_helpers.c</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_basic.c</itemPath>
+              <itemPath>../src/config/default/library/cryptoauthlib/atca_iface.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
           <logicalFolder name="osal" displayName="osal" projectFiles="true">
             <itemPath>../src/config/default/osal/osal_freertos.c</itemPath>
           </logicalFolder>
@@ -470,6 +611,7 @@
       <itemPath>../src/app/utils/timer/timer_control.c</itemPath>
       <itemPath>../src/app/utils/osal_sphere/osal_sphere.c</itemPath>
       <itemPath>../src/app/wifi_mgr/cloud_task.c</itemPath>
+      <itemPath>../src/app/wifi_mgr/cloud_status.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -491,14 +633,14 @@
         <targetDevice>ATSAMD21G18A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>5.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -530,6 +672,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="cast-align" value="false"/>
         <property key="code-model" value="default"/>
         <property key="const-model" value="default"/>
@@ -544,7 +687,7 @@
         <property key="exclude-floating-point" value="false"/>
         <property key="expand-pragma-config" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/config/default/driver/winc/include/;../src/config/default/driver/winc/include/dev;../src/config/default/driver/winc/include/drv/bsp;../src/config/default/driver/winc/include/drv/bsp/include;../src/config/default/driver/winc/include/drv/common;../src/config/default/driver/winc/include/drv/driver;../src/config/default/driver/winc/include/drv/socket;../src/config/default/driver/winc/include/drv/spi_flash;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0;..\src\app\led_mgr;..\src\app\mcu_mgr;..\src\app\security_mgr;..\src\app\sensor_mgr;..\src\app\wifi_mgr;..\src\config\default\peripheral\sercom\spi_master;..\src\app\utils\fsm\inc_folder;..\src\app\utils\timer\inc_folder;..\src\app\utils\osal_sphere\inc_folder"/>
+                  value="../src;../src/config/default;../src/config/default/driver/winc/include/;../src/config/default/driver/winc/include/dev;../src/config/default/driver/winc/include/drv/bsp;../src/config/default/driver/winc/include/drv/bsp/include;../src/config/default/driver/winc/include/drv/common;../src/config/default/driver/winc/include/drv/driver;../src/config/default/driver/winc/include/drv/socket;../src/config/default/driver/winc/include/drv/spi_flash;../src/config/default/library/cryptoauthlib;../src/config/default/library/cryptoauthlib/crypto;../src/config/default/library/cryptoauthlib/pkcs11;../src/config/default/library/cryptoauthlib/tng;../src/config/default/library/cryptoauthlib/wpc;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0;..\src\app\led_mgr;..\src\app\mcu_mgr;..\src\app\security_mgr;..\src\app\sensor_mgr;..\src\app\utils\fsm\inc_folder;..\src\app\utils\osal_sphere\inc_folder;..\src\app\utils\timer\inc_folder;..\src\app\wifi_mgr;..\src\config\default\library\cryptoauthlib;..\src\config\default\library\cryptoauthlib\crypto;..\src\config\default\library\cryptoauthlib\crypto\hashes;..\src\config\default\library\cryptoauthlib\hal;..\src\config\default\library\cryptoauthlib\jwt;..\src\config\default\peripheral\sercom\spi_master"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -608,6 +751,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -653,6 +797,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>

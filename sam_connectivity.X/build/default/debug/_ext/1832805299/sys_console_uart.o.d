@@ -102,11 +102,11 @@ build/default/debug/_ext/1832805299/sys_console_uart.o: \
  ../src/config/default/definitions.h \
  ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
  ../src/config/default/peripheral/evsys/plib_evsys.h \
+ ../src/config/default/system/command/sys_command.h \
  ../src/config/default/driver/winc/include/wdrv_winc_api.h \
  ../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h \
  ../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom4_spi_master.h \
  ../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom_spi_master_common.h \
- ../src/config/default/system/command/sys_command.h \
  ../src/config/default/peripheral/port/plib_port.h \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
@@ -228,11 +228,11 @@ build/default/debug/_ext/1832805299/sys_console_uart.o: \
 ../src/config/default/definitions.h:
 ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
 ../src/config/default/peripheral/evsys/plib_evsys.h:
+../src/config/default/system/command/sys_command.h:
 ../src/config/default/driver/winc/include/wdrv_winc_api.h:
 ../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h:
 ../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom4_spi_master.h:
 ../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom_spi_master_common.h:
-../src/config/default/system/command/sys_command.h:
 ../src/config/default/peripheral/port/plib_port.h:
 ../src/config/default/peripheral/clock/plib_clock.h:
 ../src/config/default/peripheral/nvic/plib_nvic.h:

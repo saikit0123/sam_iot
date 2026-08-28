@@ -73,16 +73,16 @@ build/default/debug/_ext/1171490990/tasks.o: \
  ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
  ../src/config/default/device.h \
  ../src/config/default/peripheral/evsys/plib_evsys.h \
- ../src/config/default/driver/winc/include/wdrv_winc_api.h \
- ../src/config/default/system/system_module.h \
- ../src/config/default/system/system_common.h \
- ../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h \
- ../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom4_spi_master.h \
- ../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom_spi_master_common.h \
  ../src/config/default/system/command/sys_command.h \
  ../src/config/default/configuration.h \
  ../src/config/default/system/system.h \
  ../src/config/default/system/system_common.h \
+ ../src/config/default/system/system_module.h \
+ ../src/config/default/system/system_common.h \
+ ../src/config/default/driver/winc/include/wdrv_winc_api.h \
+ ../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h \
+ ../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom4_spi_master.h \
+ ../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom_spi_master_common.h \
  ../src/config/default/peripheral/port/plib_port.h \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
@@ -122,9 +122,7 @@ build/default/debug/_ext/1171490990/tasks.o: \
  ../src/config/default/system/debug/sys_debug.h \
  ../src/config/default/system/console/sys_console.h ../src/app.h \
  ../src/config/default/sys_tasks.h ../src/app/mcu_mgr/mcu_mgr.h \
- ../src/app/mcu_mgr/msg_id.h ../src/app/led_mgr/led_mgr.h \
- ../src/app/wifi_mgr/wifi_mgr.h ../src/app/sensor_mgr/sensor_mgr.h \
- ../src/app/security_mgr/security_mgr.h ../src/app/mcu_mgr/msg_id.h
+ ../src/app/mcu_mgr/msg_id.h
 ../src/config/default/configuration.h:
 ../src/config/default/user.h:
 ../src/config/default/device.h:
@@ -200,16 +198,16 @@ build/default/debug/_ext/1171490990/tasks.o: \
 ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
 ../src/config/default/device.h:
 ../src/config/default/peripheral/evsys/plib_evsys.h:
-../src/config/default/driver/winc/include/wdrv_winc_api.h:
-../src/config/default/system/system_module.h:
-../src/config/default/system/system_common.h:
-../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h:
-../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom4_spi_master.h:
-../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom_spi_master_common.h:
 ../src/config/default/system/command/sys_command.h:
 ../src/config/default/configuration.h:
 ../src/config/default/system/system.h:
 ../src/config/default/system/system_common.h:
+../src/config/default/system/system_module.h:
+../src/config/default/system/system_common.h:
+../src/config/default/driver/winc/include/wdrv_winc_api.h:
+../src/config/default/driver/winc/include/dev/wdrv_winc_spi.h:
+../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom4_spi_master.h:
+../src/config/default/driver/winc/include/drv/bsp/../../../../../peripheral/sercom/spi_master/plib_sercom_spi_master_common.h:
 ../src/config/default/peripheral/port/plib_port.h:
 ../src/config/default/peripheral/clock/plib_clock.h:
 ../src/config/default/peripheral/nvic/plib_nvic.h:
@@ -251,9 +249,4 @@ build/default/debug/_ext/1171490990/tasks.o: \
 ../src/app.h:
 ../src/config/default/sys_tasks.h:
 ../src/app/mcu_mgr/mcu_mgr.h:
-../src/app/mcu_mgr/msg_id.h:
-../src/app/led_mgr/led_mgr.h:
-../src/app/wifi_mgr/wifi_mgr.h:
-../src/app/sensor_mgr/sensor_mgr.h:
-../src/app/security_mgr/security_mgr.h:
 ../src/app/mcu_mgr/msg_id.h:

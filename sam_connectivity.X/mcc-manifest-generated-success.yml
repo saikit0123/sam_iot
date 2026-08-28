@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: sam_connectivity
-creation_date: 2026-06-19T23:55:21.513+08:00[Asia/Singapore]
+creation_date: 2026-08-23T12:09:28.327+08:00[Asia/Singapore]
 operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
@@ -18,8 +18,9 @@ device_library: {library_class: com.microchip.mcc.harmony.Harmony3Library, name:
     V3, version: 1.5.5}
 packs: {name: SAMD21_DFP, version: 3.8.270}
 modules:
+- {name: cryptoauthlib, type: HARMONY, version: v3.5.1}
 - {name: csp, type: HARMONY, version: v3.18.0}
-- {name: wireless_wifi, type: HARMONY, version: v3.9.0}
 - {name: core, type: HARMONY, version: v3.13.1}
+- {name: wireless_wifi, type: HARMONY, version: v3.9.0}
 - {name: CMSIS_5, type: HARMONY, version: 5.9.0}
 - {name: CMSIS-FreeRTOS, type: HARMONY, version: v10.5.1}
