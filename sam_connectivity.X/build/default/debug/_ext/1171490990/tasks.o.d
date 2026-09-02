@@ -122,7 +122,9 @@ build/default/debug/_ext/1171490990/tasks.o: \
  ../src/config/default/system/debug/sys_debug.h \
  ../src/config/default/system/console/sys_console.h ../src/app.h \
  ../src/config/default/sys_tasks.h ../src/app/mcu_mgr/mcu_mgr.h \
- ../src/app/mcu_mgr/msg_id.h
+ ../src/app/mcu_mgr/msg_id.h ../src/app/led_mgr/led_mgr.h \
+ ../src/app/wifi_mgr/wifi_mgr.h ../src/app/sensor_mgr/sensor_mgr.h \
+ ../src/app/security_mgr/security_mgr.h ../src/app/mcu_mgr/msg_id.h
 ../src/config/default/configuration.h:
 ../src/config/default/user.h:
 ../src/config/default/device.h:
@@ -249,4 +251,9 @@ build/default/debug/_ext/1171490990/tasks.o: \
 ../src/app.h:
 ../src/config/default/sys_tasks.h:
 ../src/app/mcu_mgr/mcu_mgr.h:
+../src/app/mcu_mgr/msg_id.h:
+../src/app/led_mgr/led_mgr.h:
+../src/app/wifi_mgr/wifi_mgr.h:
+../src/app/sensor_mgr/sensor_mgr.h:
+../src/app/security_mgr/security_mgr.h:
 ../src/app/mcu_mgr/msg_id.h:

@@ -18,6 +18,7 @@
                 <sourceRootElem>../src/app/utils/fsm/inc_folder</sourceRootElem>
                 <sourceRootElem>../src/app/utils/timer</sourceRootElem>
                 <sourceRootElem>../src/app/utils/osal_sphere</sourceRootElem>
+                <sourceRootElem>../src/third_party/paho_mqtt_embedded_c</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

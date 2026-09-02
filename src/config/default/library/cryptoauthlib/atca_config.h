@@ -8,7 +8,7 @@
 
 
 /** Include Device Support Options */
-#define ATCA_ATECC108A_SUPPORT
+#define ATCA_ATECC608_SUPPORT
 
 
 
@@ -200,9 +200,9 @@
 
 
 
+/** Define certificate templates to be supported. */
 
 
-#define ATCA_TEST_MULTIPLE_INSTANCES
 
 
 #endif // ATCA_CONFIG_H

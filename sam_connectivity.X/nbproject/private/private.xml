@@ -4,12 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/driver/winc/dev/gpio/wdrv_winc_eint.c</file>
-            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/app/wifi_mgr/cloud_task.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/interrupts.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/driver/winc/drv/driver/m2m_wifi.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/driver/winc/include/dev/wdrv_winc_spi.h</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/library/cryptoauthlib/atca_utils_sizes.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/third_party/rtos/FreeRTOS/Source/FreeRTOS_tasks.c</file>
+            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/library/cryptoauthlib/calib/calib_basic.h</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/freertos_hooks.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/driver/winc/wdrv_winc.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/driver/winc/dev/gpio/wdrv_winc_gpio.c</file>

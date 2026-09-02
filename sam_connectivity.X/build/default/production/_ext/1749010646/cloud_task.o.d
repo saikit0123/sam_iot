@@ -187,7 +187,31 @@ build/default/production/_ext/1749010646/cloud_task.o: \
  ../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes.h \
  ../src/config/default/library/cryptoauthlib/cryptoauthlib.h \
  ../src/config/default/library/cryptoauthlib/crypto/crypto_config_check.h \
- ../src/app/wifi_mgr/cloud_status.h
+ ../src/app/wifi_mgr/cloud_status.h \
+ ../src/config/default/library/cryptoauthlib/atcacert/atcacert.h \
+ ../src/config/default/library/cryptoauthlib/atcacert/atcacert_check_config.h \
+ ../src/config/default/library/cryptoauthlib/atcacert/atcacert_def.h \
+ ../src/config/default/library/cryptoauthlib/atca_compiler.h \
+ ../src/config/default/library/cryptoauthlib/atcacert/atcacert.h \
+ ../src/config/default/library/cryptoauthlib/atcacert/atcacert_date.h \
+ ../src/config/default/library/cryptoauthlib/atca_helpers.h \
+ ../src/config/default/library/cryptoauthlib/tng/tng_atcacert_client.h \
+ ../src/config/default/library/cryptoauthlib/atcacert/atcacert.h \
+ ../src/config/default/library/cryptoauthlib/atcacert/atcacert_pem.h \
+ ../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_1_signer.h \
+ ../src/config/default/library/cryptoauthlib/atcacert/atcacert_def.h \
+ ../src/config/default/library/cryptoauthlib/tng/tng_atca.h \
+ ../src/third_party/paho_mqtt_embedded_c/platform/network_interface.h \
+ ../src/third_party/paho_mqtt_embedded_c/MQTTClient-C/MQTTClient.h \
+ ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.h \
+ ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTConnect.h \
+ ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPublish.h \
+ ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTSubscribe.h \
+ ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTUnsubscribe.h \
+ ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTFormat.h \
+ ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/StackTrace.h \
+ ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.h \
+ ../src/third_party/paho_mqtt_embedded_c/platform/timer_interface.h
 ../src/app/wifi_mgr/cloud_task.h:
 ../src/config/default/driver/winc/include/wdrv_winc.h:
 ../src/config/default/configuration.h:
@@ -379,3 +403,27 @@ build/default/production/_ext/1749010646/cloud_task.o: \
 ../src/config/default/library/cryptoauthlib/cryptoauthlib.h:
 ../src/config/default/library/cryptoauthlib/crypto/crypto_config_check.h:
 ../src/app/wifi_mgr/cloud_status.h:
+../src/config/default/library/cryptoauthlib/atcacert/atcacert.h:
+../src/config/default/library/cryptoauthlib/atcacert/atcacert_check_config.h:
+../src/config/default/library/cryptoauthlib/atcacert/atcacert_def.h:
+../src/config/default/library/cryptoauthlib/atca_compiler.h:
+../src/config/default/library/cryptoauthlib/atcacert/atcacert.h:
+../src/config/default/library/cryptoauthlib/atcacert/atcacert_date.h:
+../src/config/default/library/cryptoauthlib/atca_helpers.h:
+../src/config/default/library/cryptoauthlib/tng/tng_atcacert_client.h:
+../src/config/default/library/cryptoauthlib/atcacert/atcacert.h:
+../src/config/default/library/cryptoauthlib/atcacert/atcacert_pem.h:
+../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_1_signer.h:
+../src/config/default/library/cryptoauthlib/atcacert/atcacert_def.h:
+../src/config/default/library/cryptoauthlib/tng/tng_atca.h:
+../src/third_party/paho_mqtt_embedded_c/platform/network_interface.h:
+../src/third_party/paho_mqtt_embedded_c/MQTTClient-C/MQTTClient.h:
+../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.h:
+../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTConnect.h:
+../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPublish.h:
+../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTSubscribe.h:
+../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTUnsubscribe.h:
+../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTFormat.h:
+../src/third_party/paho_mqtt_embedded_c/MQTTPacket/StackTrace.h:
+../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.h:
+../src/third_party/paho_mqtt_embedded_c/platform/timer_interface.h:

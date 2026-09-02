@@ -154,7 +154,7 @@ static void wifiMgr_cloudWifiInit()
 {
     SYS_CONSOLE_PRINT("\r\n Wifi mgr cloud wifi init function\r\n");
     //int wifi_status = cloud_wifi_init(wdrvHandle);
-    cloud_wifi_init(wdrvHandle);
+    //cloud_wifi_init(wdrvHandle);
     // if (wifi_status == M2M_SUCCESS)
     // {
     //     // Set the current state

@@ -88,7 +88,6 @@ extern "C" {
 /* Command System Service RTOS Configurations*/
 #define SYS_CMD_RTOS_STACK_SIZE                256
 #define SYS_CMD_RTOS_TASK_PRIORITY             1
-#define SYS_CMD_STACK_SIZE_MEDIUM              1024
 
 
 #define SYS_DEBUG_ENABLE

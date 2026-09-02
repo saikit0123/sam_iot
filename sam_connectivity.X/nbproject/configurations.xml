@@ -114,6 +114,18 @@
               <logicalFolder name="jwt" displayName="jwt" projectFiles="true">
                 <itemPath>../src/config/default/library/cryptoauthlib/jwt/atca_jwt.h</itemPath>
               </logicalFolder>
+              <logicalFolder name="tng" displayName="tng" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tng_atca.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tflxtls_cert_def_4_device.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tng_root_cert.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_4_device.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_1_signer.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_3_device.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tng_atcacert_client.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_2_device.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_1_signer.h</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_2_device.h</itemPath>
+              </logicalFolder>
               <itemPath>../src/config/default/library/cryptoauthlib/atca_config.h</itemPath>
               <itemPath>../src/config/default/library/cryptoauthlib/atca_debug.h</itemPath>
               <itemPath>../src/config/default/library/cryptoauthlib/cryptoauthlib.h</itemPath>
@@ -489,6 +501,18 @@
               <logicalFolder name="jwt" displayName="jwt" projectFiles="true">
                 <itemPath>../src/config/default/library/cryptoauthlib/jwt/atca_jwt.c</itemPath>
               </logicalFolder>
+              <logicalFolder name="tng" displayName="tng" projectFiles="true">
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tng_atca.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tflxtls_cert_def_4_device.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tng_root_cert.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_4_device.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_1_signer.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_3_device.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tng_atcacert_client.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tnglora_cert_def_2_device.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_1_signer.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/tng/tngtls_cert_def_2_device.c</itemPath>
+              </logicalFolder>
               <itemPath>../src/config/default/library/cryptoauthlib/atca_debug.c</itemPath>
               <itemPath>../src/config/default/library/cryptoauthlib/atca_cfgs.c</itemPath>
               <itemPath>../src/config/default/library/cryptoauthlib/atca_utils_sizes.c</itemPath>
@@ -594,6 +618,31 @@
       <logicalFolder name="led_mgr" displayName="led_mgr" projectFiles="true">
         <itemPath>../src/app/led_mgr/led_mgr.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="paho_mqtt_embedded_c"
+                     displayName="paho_mqtt_embedded_c"
+                     projectFiles="true">
+        <logicalFolder name="MQTTClient-C"
+                       displayName="MQTTClient-C"
+                       projectFiles="true">
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTClient-C/MQTTClient.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MQTTPacket" displayName="MQTTPacket" projectFiles="true">
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTConnectClient.c</itemPath>
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTConnectServer.c</itemPath>
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTDeserializePublish.c</itemPath>
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTFormat.c</itemPath>
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.c</itemPath>
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTSerializePublish.c</itemPath>
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTSubscribeClient.c</itemPath>
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTSubscribeServer.c</itemPath>
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTUnsubscribeClient.c</itemPath>
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTUnsubscribeServer.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="platform" displayName="platform" projectFiles="true">
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/platform/network_interface.c</itemPath>
+          <itemPath>../src/third_party/paho_mqtt_embedded_c/platform/timer_interface.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <logicalFolder name="security_mgr"
                      displayName="security_mgr"
                      projectFiles="true">
@@ -624,6 +673,7 @@
     <Elem>../src/app/utils/fsm/inc_folder</Elem>
     <Elem>../src/app/utils/timer</Elem>
     <Elem>../src/app/utils/osal_sphere</Elem>
+    <Elem>../src/third_party/paho_mqtt_embedded_c</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -672,7 +722,6 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="cast-align" value="false"/>
         <property key="code-model" value="default"/>
         <property key="const-model" value="default"/>
@@ -687,7 +736,7 @@
         <property key="exclude-floating-point" value="false"/>
         <property key="expand-pragma-config" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/config/default/driver/winc/include/;../src/config/default/driver/winc/include/dev;../src/config/default/driver/winc/include/drv/bsp;../src/config/default/driver/winc/include/drv/bsp/include;../src/config/default/driver/winc/include/drv/common;../src/config/default/driver/winc/include/drv/driver;../src/config/default/driver/winc/include/drv/socket;../src/config/default/driver/winc/include/drv/spi_flash;../src/config/default/library/cryptoauthlib;../src/config/default/library/cryptoauthlib/crypto;../src/config/default/library/cryptoauthlib/pkcs11;../src/config/default/library/cryptoauthlib/tng;../src/config/default/library/cryptoauthlib/wpc;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0;..\src\app\led_mgr;..\src\app\mcu_mgr;..\src\app\security_mgr;..\src\app\sensor_mgr;..\src\app\utils\fsm\inc_folder;..\src\app\utils\osal_sphere\inc_folder;..\src\app\utils\timer\inc_folder;..\src\app\wifi_mgr;..\src\config\default\library\cryptoauthlib;..\src\config\default\library\cryptoauthlib\crypto;..\src\config\default\library\cryptoauthlib\crypto\hashes;..\src\config\default\library\cryptoauthlib\hal;..\src\config\default\library\cryptoauthlib\jwt;..\src\config\default\peripheral\sercom\spi_master"/>
+                  value="../src;../src/config/default;../src/config/default/driver/winc/include/;../src/config/default/driver/winc/include/dev;../src/config/default/driver/winc/include/drv/bsp;../src/config/default/driver/winc/include/drv/bsp/include;../src/config/default/driver/winc/include/drv/common;../src/config/default/driver/winc/include/drv/driver;../src/config/default/driver/winc/include/drv/socket;../src/config/default/driver/winc/include/drv/spi_flash;../src/config/default/library/cryptoauthlib;../src/config/default/library/cryptoauthlib/crypto;../src/config/default/library/cryptoauthlib/pkcs11;../src/config/default/library/cryptoauthlib/tng;../src/config/default/library/cryptoauthlib/wpc;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/config/default/third_party_adapter/wolfMQTT/src/;../src/packs/ATSAMD21G18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM0;../src/third_party/wolfMQTT;..\src\app\led_mgr;..\src\app\mcu_mgr;..\src\app\security_mgr;..\src\app\sensor_mgr;..\src\app\utils\fsm\inc_folder;..\src\app\utils\osal_sphere\inc_folder;..\src\app\utils\timer\inc_folder;..\src\app\wifi_mgr;..\src\config\default\library\cryptoauthlib;..\src\config\default\library\cryptoauthlib\atcacert;..\src\config\default\library\cryptoauthlib\calib;..\src\config\default\library\cryptoauthlib\crypto;..\src\config\default\library\cryptoauthlib\crypto\hashes;..\src\config\default\library\cryptoauthlib\hal;..\src\config\default\library\cryptoauthlib\jwt;..\src\config\default\peripheral\sercom\spi_master;..\src\third_party\paho_mqtt_embedded_c\MQTTClient-C;..\src\third_party\paho_mqtt_embedded_c\MQTTPacket;..\src\third_party\paho_mqtt_embedded_c\platform"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -706,7 +755,7 @@
         <property key="place-data-into-section" value="true"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros" value="HAVE_CONFIG_H"/>
         <property key="scalar-model" value="default"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
@@ -751,7 +800,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -797,7 +845,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>

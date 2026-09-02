@@ -153,7 +153,8 @@ build/default/debug/_ext/95446945/calib_aes_gcm.o: \
  ../src/config/default/library/cryptoauthlib/crypto/crypto_config_check.h \
  ../src/config/default/library/cryptoauthlib/calib/calib_config_check.h \
  ../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes.h \
- ../src/config/default/library/cryptoauthlib/crypto/crypto_config_check.h
+ ../src/config/default/library/cryptoauthlib/crypto/crypto_config_check.h \
+ ../src/config/default/library/cryptoauthlib/calib/calib_aes_gcm.h
 ../src/config/default/library/cryptoauthlib/cryptoauthlib.h:
 ../src/config/default/library/cryptoauthlib/atca_config_check.h:
 ../src/config/default/library/cryptoauthlib/atca_config.h:
@@ -311,3 +312,4 @@ build/default/debug/_ext/95446945/calib_aes_gcm.o: \
 ../src/config/default/library/cryptoauthlib/calib/calib_config_check.h:
 ../src/config/default/library/cryptoauthlib/crypto/atca_crypto_hw_aes.h:
 ../src/config/default/library/cryptoauthlib/crypto/crypto_config_check.h:
+../src/config/default/library/cryptoauthlib/calib/calib_aes_gcm.h:

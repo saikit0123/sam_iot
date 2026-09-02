@@ -10,11 +10,11 @@
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
-         <string>atecc108a</string>
+         <string>atecc608</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
-         <string>atecc108a_0</string>
+         <string>atecc608_0</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
@@ -27,6 +27,10 @@
       </entry>
       <entry>
          <string>cryptoauthlib</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>cryptoauthlib_tng</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
@@ -3740,97 +3744,106 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a" name="!@#harmonyAttachmentState"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc108a&gt;
-  &lt;atecc108a dnOrder=&quot;0&quot;/&gt;
-&lt;/atecc108a&gt;
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608&gt;
+  &lt;atecc608 dnOrder=&quot;0&quot;/&gt;
+&lt;/atecc608&gt;
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a" name="#&amp;__MCC_Group_Parrent_id"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a_0" name="!@#harmonyAttachmentState"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc108a_0&gt;
-  &lt;atecc108a_0 dnOrder=&quot;0&quot;/&gt;
-&lt;/atecc108a_0&gt;
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608_0&gt;
+  &lt;atecc608_0 dnOrder=&quot;0&quot;/&gt;
+&lt;/atecc608_0&gt;
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a_0" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>atecc108a</value>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>atecc608</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a_0" name="HAL_INTERFACE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc108a_0&gt;
-  &lt;atecc108a_0 dnOrder=&quot;0&quot; id=&quot;HAL_INTERFACE&quot;&gt;
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="HAL_INTERFACE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608_0&gt;
+  &lt;atecc608_0 dnOrder=&quot;0&quot; id=&quot;HAL_INTERFACE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/atecc108a_0&gt;
-&lt;/atecc108a_0&gt;
+  &lt;/atecc608_0&gt;
+&lt;/atecc608_0&gt;
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a_0" name="I2C_ADDR"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc108a_0&gt;
-  &lt;atecc108a_0 dnOrder=&quot;0&quot; id=&quot;I2C_ADDR&quot;&gt;
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="I2C_ADDR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608_0&gt;
+  &lt;atecc608_0 dnOrder=&quot;0&quot; id=&quot;I2C_ADDR&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/atecc108a_0&gt;
-&lt;/atecc108a_0&gt;
+  &lt;/atecc608_0&gt;
+&lt;/atecc608_0&gt;
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a_0" name="INTERFACE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc108a_0&gt;
-  &lt;atecc108a_0 dnOrder=&quot;0&quot; id=&quot;INTERFACE&quot;&gt;
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="INTERFACE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608_0&gt;
+  &lt;atecc608_0 dnOrder=&quot;0&quot; id=&quot;INTERFACE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/atecc108a_0&gt;
-&lt;/atecc108a_0&gt;
+  &lt;/atecc608_0&gt;
+&lt;/atecc608_0&gt;
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a_0" name="NAME"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc108a_0&gt;
-  &lt;atecc108a_0 dnOrder=&quot;0&quot; id=&quot;NAME&quot;&gt;
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608_0&gt;
+  &lt;atecc608_0 dnOrder=&quot;0&quot; id=&quot;NAME&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/atecc108a_0&gt;
-&lt;/atecc108a_0&gt;
+  &lt;/atecc608_0&gt;
+&lt;/atecc608_0&gt;
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a_0" name="RECEIVE_RETRY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc108a_0&gt;
-  &lt;atecc108a_0 dnOrder=&quot;0&quot; id=&quot;RECEIVE_RETRY&quot;&gt;
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="PART_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608_0&gt;
+  &lt;atecc608_0 dnOrder=&quot;0&quot; id=&quot;PART_TYPE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/atecc108a_0&gt;
-&lt;/atecc108a_0&gt;
+  &lt;/atecc608_0&gt;
+&lt;/atecc608_0&gt;
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a_0" name="SPI_CS_PIN"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc108a_0&gt;
-  &lt;atecc108a_0 dnOrder=&quot;0&quot; id=&quot;SPI_CS_PIN&quot;&gt;
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="RECEIVE_RETRY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608_0&gt;
+  &lt;atecc608_0 dnOrder=&quot;0&quot; id=&quot;RECEIVE_RETRY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/atecc108a_0&gt;
-&lt;/atecc108a_0&gt;
+  &lt;/atecc608_0&gt;
+&lt;/atecc608_0&gt;
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a_0" name="SWIBB_CRYPTO_PIN"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc108a_0&gt;
-  &lt;atecc108a_0 dnOrder=&quot;0&quot; id=&quot;SWIBB_CRYPTO_PIN&quot;&gt;
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="SPI_CS_PIN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608_0&gt;
+  &lt;atecc608_0 dnOrder=&quot;0&quot; id=&quot;SPI_CS_PIN&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/atecc108a_0&gt;
-&lt;/atecc108a_0&gt;
+  &lt;/atecc608_0&gt;
+&lt;/atecc608_0&gt;
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc108a_0" name="WAKEUP_DELAY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc108a_0&gt;
-  &lt;atecc108a_0 dnOrder=&quot;0&quot; id=&quot;WAKEUP_DELAY&quot;&gt;
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="SWIBB_CRYPTO_PIN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608_0&gt;
+  &lt;atecc608_0 dnOrder=&quot;0&quot; id=&quot;SWIBB_CRYPTO_PIN&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/atecc108a_0&gt;
-&lt;/atecc108a_0&gt;
+  &lt;/atecc608_0&gt;
+&lt;/atecc608_0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="atecc608_0" name="WAKEUP_DELAY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;atecc608_0&gt;
+  &lt;atecc608_0 dnOrder=&quot;0&quot; id=&quot;WAKEUP_DELAY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/atecc608_0&gt;
+&lt;/atecc608_0&gt;
 </value>
       </entry>
       <entry>
@@ -3841,7 +3854,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;439&quot; canvasWidth=&quot;1029&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;510&quot; canvasWidth=&quot;1029&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
       &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
     &lt;/PowerProfiles&gt;
@@ -3849,22 +3862,23 @@
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;FreeRTOS&quot; x=&quot;430&quot; y=&quot;238&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;560&quot; y=&quot;21&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;atecc108a&quot; x=&quot;190&quot; y=&quot;100&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;atecc608&quot; x=&quot;190&quot; y=&quot;100&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;cmsis&quot; x=&quot;432&quot; y=&quot;62&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core&quot; x=&quot;330&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;cryptoauthlib&quot; x=&quot;232&quot; y=&quot;312&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;dfp&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;drvWifiWinc&quot; x=&quot;869&quot; y=&quot;277&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;eic&quot; x=&quot;29&quot; y=&quot;159&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;evsys&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sercom4&quot; x=&quot;492&quot; y=&quot;362&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sercom5&quot; x=&quot;686&quot; y=&quot;244&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sys_command&quot; x=&quot;510&quot; y=&quot;120&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sys_console&quot; x=&quot;740&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;sys_debug&quot; x=&quot;915&quot; y=&quot;34&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_time&quot; x=&quot;31&quot; y=&quot;220&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;tc3&quot; x=&quot;30&quot; y=&quot;372&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;cryptoauthlib_tng&quot; x=&quot;650&quot; y=&quot;400&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;dfp&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;drvWifiWinc&quot; x=&quot;869&quot; y=&quot;277&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;eic&quot; x=&quot;29&quot; y=&quot;159&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;evsys&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sercom4&quot; x=&quot;492&quot; y=&quot;362&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sercom5&quot; x=&quot;686&quot; y=&quot;244&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sys_command&quot; x=&quot;510&quot; y=&quot;120&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;sys_console&quot; x=&quot;740&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_debug&quot; x=&quot;915&quot; y=&quot;34&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;sys_time&quot; x=&quot;31&quot; y=&quot;220&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;tc3&quot; x=&quot;30&quot; y=&quot;372&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -10626,6 +10640,53 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="cryptoauthlib_tng" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;cryptoauthlib_tng&gt;
+  &lt;cryptoauthlib_tng dnOrder=&quot;0&quot;/&gt;
+&lt;/cryptoauthlib_tng&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="cryptoauthlib_tng" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="cryptoauthlib_tng" name="CAL_TFLXTLS_SUPPORT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;cryptoauthlib_tng&gt;
+  &lt;cryptoauthlib_tng dnOrder=&quot;0&quot; id=&quot;CAL_TFLXTLS_SUPPORT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/cryptoauthlib_tng&gt;
+&lt;/cryptoauthlib_tng&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="cryptoauthlib_tng" name="CAL_TNGLORA_SUPPORT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;cryptoauthlib_tng&gt;
+  &lt;cryptoauthlib_tng dnOrder=&quot;0&quot; id=&quot;CAL_TNGLORA_SUPPORT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/cryptoauthlib_tng&gt;
+&lt;/cryptoauthlib_tng&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="cryptoauthlib_tng" name="CAL_TNGTLS_SUPPORT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;cryptoauthlib_tng&gt;
+  &lt;cryptoauthlib_tng dnOrder=&quot;0&quot; id=&quot;CAL_TNGTLS_SUPPORT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/cryptoauthlib_tng&gt;
+&lt;/cryptoauthlib_tng&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="cryptoauthlib_tng" name="CAL_TNG_LEGACY_SUPPORT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;cryptoauthlib_tng&gt;
+  &lt;cryptoauthlib_tng dnOrder=&quot;0&quot; id=&quot;CAL_TNG_LEGACY_SUPPORT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/cryptoauthlib_tng&gt;
+&lt;/cryptoauthlib_tng&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dfp" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
       </entry>
@@ -16303,7 +16364,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\library\cryptoauthlib\atca_config.h</file>
-         <hash>a577e7183e52f34067c821a4656247e96d356c25eb3c2afe0213f30227417f25</hash>
+         <hash>9e5c641a35d8ac619182d5c34cfaefa4987348f4ab0b8b6243d76901920eac4c</hash>
       </entry>
       <entry>
          <file>..\src\config\default\library\cryptoauthlib\atca_config_check.h</file>
@@ -16638,7 +16699,7 @@
          <hash>f7d040c906bc7c471558d2110ad5f87ac7b8986a96d8d0fa75dc1651167fcde4</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\library\cryptoauthlib\hal\ATECC108A_0.c</file>
+         <file>..\src\config\default\library\cryptoauthlib\hal\ATECC608_0.c</file>
          <hash/>
       </entry>
       <entry>
@@ -16684,6 +16745,86 @@
       <entry>
          <file>..\src\config\default\library\cryptoauthlib\jwt\atca_jwt.h</file>
          <hash>474562055657d29505a2fee41428e4b6c8b52e2109475bb8ae041d4c58831d35</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tflxtls_cert_def_4_device.c</file>
+         <hash>6ed899e259f16301bd83f6816863205698e782bed6f24eaaa6f84bd4f8f8a5f8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tflxtls_cert_def_4_device.h</file>
+         <hash>02e656f0627ceed96c9918807cb5e2c8d7d0cf1e105338aef97fe4631388032c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tng_atca.c</file>
+         <hash>eeb7d44d2de688aae5a165cdbb4260651e30cdbdd2df243b301fc619be663c62</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tng_atca.h</file>
+         <hash>e7cc88d4d2851ad725ec1be011a3eae8681357eeeae0533915dd2eb1910f825d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tng_atcacert_client.c</file>
+         <hash>490d3b997008176a8264da836125aaa23b426dfb106b9b32635b82fb290f1e4f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tng_atcacert_client.h</file>
+         <hash>223d56c71fca026c8307dbd1396707c48ceaf126dd11cb9db3fe20f8c4482de7</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tng_root_cert.c</file>
+         <hash>67fa1df2a3ff1bae1d5ae2a264271034a15524043de0ae6ce0be7a48d4630f72</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tng_root_cert.h</file>
+         <hash>a19bc7052390b69a0569bfc0dc5ad5d4e6e88f84cc834c0f8e1ee7f9fe75d125</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tnglora_cert_def_1_signer.c</file>
+         <hash>b74a1acc146f667a6c76189ae641062fd095dc5452c392bb33a6f197b3e07cba</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tnglora_cert_def_1_signer.h</file>
+         <hash>dc628b7e923d711da25290e3eaf6775cb02fe0d9e5baa5a2af50d7bfb67f2aac</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tnglora_cert_def_2_device.c</file>
+         <hash>6c7bfd48232ff511d8135d048c088a418d8ebda1beafd9d94d8d459e6754b148</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tnglora_cert_def_2_device.h</file>
+         <hash>8a5e4e9fafdfa4f65aeed0387e32b18f14797f85030404a8b8d7768dfdc17f8d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tnglora_cert_def_4_device.c</file>
+         <hash>e23ec36f73877d1a99fd26f5f5577647655f0a67735e3ae51a77827890c26e60</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tnglora_cert_def_4_device.h</file>
+         <hash>920d4e0e34cdfe434f2124a5e34eec8cc9fbe709f79754544107215888ae7e25</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tngtls_cert_def_1_signer.c</file>
+         <hash>877e9efe4ebbde70d1c3d46251e1707f354b9dff6200219d0d5200bc22420a4b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tngtls_cert_def_1_signer.h</file>
+         <hash>ca4b452150e417602a791c15869d7e072e5eec9392da33f1ecd0479a64972301</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tngtls_cert_def_2_device.c</file>
+         <hash>3e02bc9b4b7ce46b3272cedb5bbb93e160449c185e938d7e574f3dcdec9cc734</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tngtls_cert_def_2_device.h</file>
+         <hash>646a1312cfd3878a6d24b6c1d26850972727c8d53024ef226e631f74d06c2584</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tngtls_cert_def_3_device.c</file>
+         <hash>44a5dabf48865321c0173771ac03f055a456bb00d21dab7b9bbdd75a2e1d52e5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\default\library\cryptoauthlib\tng\tngtls_cert_def_3_device.h</file>
+         <hash>f18a6040eb5538972744eee0f4b0cbe3f9e2e710d7b3a59c546f4bc5d9024be7</hash>
       </entry>
       <entry>
          <file>..\src\config\default\osal\osal.h</file>
