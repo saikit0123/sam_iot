@@ -153,7 +153,11 @@ static void wifiMgr_wincInit()
 static void wifiMgr_cloudWifiInit()
 {
     SYS_CONSOLE_PRINT("\r\n Wifi mgr cloud wifi init function\r\n");
-    //int wifi_status = cloud_wifi_init(wdrvHandle);
+    int wifi_status = cloud_wifi_init(wdrvHandle);
+    if(wifi_status == M2M_SUCCESS)
+    {
+        SYS_CONSOLE_PRINT("\r\n Cloud init successfully\r\n");
+    }
     //cloud_wifi_init(wdrvHandle);
     // if (wifi_status == M2M_SUCCESS)
     // {
