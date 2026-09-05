@@ -168,6 +168,10 @@
               <itemPath>../src/config/default/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
             <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
+              <logicalFolder name="i2c_master" displayName="i2c_master" projectFiles="true">
+                <itemPath>../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h</itemPath>
+                <itemPath>../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h</itemPath>
+              </logicalFolder>
               <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
                 <itemPath>../src/config/default/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
                 <itemPath>../src/config/default/peripheral/sercom/spi_master/plib_sercom4_spi_master.h</itemPath>
@@ -494,6 +498,8 @@
                 <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_harmony_init.c</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_gpio_harmony.c</itemPath>
                 <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_cortex_m_delay.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/hal/ATECC608_0.c</itemPath>
+                <itemPath>../src/config/default/library/cryptoauthlib/hal/hal_i2c_harmony.c</itemPath>
               </logicalFolder>
               <logicalFolder name="host" displayName="host" projectFiles="true">
                 <itemPath>../src/config/default/library/cryptoauthlib/host/atca_host.c</itemPath>
@@ -545,6 +551,9 @@
               <itemPath>../src/config/default/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
             <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
+              <logicalFolder name="i2c_master" displayName="i2c_master" projectFiles="true">
+                <itemPath>../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.c</itemPath>
+              </logicalFolder>
               <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
                 <itemPath>../src/config/default/peripheral/sercom/spi_master/plib_sercom4_spi_master.c</itemPath>
               </logicalFolder>
@@ -722,6 +731,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="cast-align" value="false"/>
         <property key="code-model" value="default"/>
         <property key="const-model" value="default"/>
@@ -800,6 +810,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -845,6 +856,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>

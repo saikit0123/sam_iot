@@ -100,6 +100,8 @@ build/default/production/_ext/1832805299/sys_console_uart.o: \
  ../src/config/default/system/int/sys_int.h \
  ../src/config/default/system/int/sys_int_mapping.h \
  ../src/config/default/definitions.h \
+ ../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h \
+ ../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h \
  ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
  ../src/config/default/peripheral/evsys/plib_evsys.h \
  ../src/config/default/system/command/sys_command.h \
@@ -226,6 +228,8 @@ build/default/production/_ext/1832805299/sys_console_uart.o: \
 ../src/config/default/system/int/sys_int.h:
 ../src/config/default/system/int/sys_int_mapping.h:
 ../src/config/default/definitions.h:
+../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h:
+../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h:
 ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
 ../src/config/default/peripheral/evsys/plib_evsys.h:
 ../src/config/default/system/command/sys_command.h:

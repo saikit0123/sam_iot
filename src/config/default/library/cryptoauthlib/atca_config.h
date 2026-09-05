@@ -5,6 +5,10 @@
 /* MPLAB Harmony Common Include */
 #include "definitions.h"
 
+#ifndef ATCA_HAL_I2C
+#define ATCA_HAL_I2C
+#endif
+
 
 
 /** Include Device Support Options */
@@ -198,11 +202,34 @@
 
 /* Define generic interfaces to the processor libraries */
 
+#define PLIB_I2C_ERROR          SERCOM_I2C_ERROR
+#define PLIB_I2C_ERROR_NONE     SERCOM_I2C_ERROR_NONE
+#define PLIB_I2C_TRANSFER_SETUP SERCOM_I2C_TRANSFER_SETUP
 
+typedef bool (* atca_i2c_plib_read)( uint16_t, uint8_t *, uint32_t );
+typedef bool (* atca_i2c_plib_write)( uint16_t, uint8_t *, uint32_t );
+typedef bool (* atca_i2c_plib_is_busy)( void );
+typedef PLIB_I2C_ERROR (* atca_i2c_error_get)( void );
+typedef bool (* atca_i2c_plib_transfer_setup)(PLIB_I2C_TRANSFER_SETUP* setup, uint32_t srcClkFreq);
+
+typedef struct atca_plib_i2c_api
+{
+    atca_i2c_plib_read              read;
+    atca_i2c_plib_write             write;
+    atca_i2c_plib_is_busy           is_busy;
+    atca_i2c_error_get              error_get;
+    atca_i2c_plib_transfer_setup    transfer_setup;
+} atca_plib_i2c_api_t;
+
+
+
+
+extern atca_plib_i2c_api_t sercom3_plib_i2c_api;
 
 /** Define certificate templates to be supported. */
 
 
+#define ATCA_TEST_MULTIPLE_INSTANCES
 
 
 #endif // ATCA_CONFIG_H

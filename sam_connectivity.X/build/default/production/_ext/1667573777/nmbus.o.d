@@ -76,8 +76,10 @@ build/default/production/_ext/1667573777/nmbus.o: \
  ../src/config/default/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
  ../src/config/default/definitions.h \
- ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
+ ../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h \
+ ../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h \
  ../src/config/default/device.h \
+ ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
  ../src/config/default/peripheral/evsys/plib_evsys.h \
  ../src/config/default/system/command/sys_command.h \
  ../src/config/default/system/system.h \
@@ -204,8 +206,10 @@ build/default/production/_ext/1667573777/nmbus.o: \
 ../src/config/default/toolchain_specifics.h:
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
 ../src/config/default/definitions.h:
-../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
+../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h:
+../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h:
 ../src/config/default/device.h:
+../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
 ../src/config/default/peripheral/evsys/plib_evsys.h:
 ../src/config/default/system/command/sys_command.h:
 ../src/config/default/system/system.h:

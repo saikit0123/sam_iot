@@ -6,7 +6,8 @@ build/default/production/_ext/2017208766/sha1_routines.o: \
  ../src/config/default/library/cryptoauthlib/atca_config_check.h \
  ../src/config/default/library/cryptoauthlib/atca_config.h \
  ../src/config/default/definitions.h \
- ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
+ ../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h \
+ ../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h \
  ../src/config/default/device.h \
  ../src/packs/ATSAMD21G18A_DFP/samd21g18a.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h \
@@ -76,6 +77,7 @@ build/default/production/_ext/2017208766/sha1_routines.o: \
  ../src/config/default/device_cache.h ../src/config/default/device.h \
  ../src/config/default/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
+ ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
  ../src/config/default/peripheral/evsys/plib_evsys.h \
  ../src/config/default/system/command/sys_command.h \
  ../src/config/default/configuration.h ../src/config/default/user.h \
@@ -162,7 +164,8 @@ build/default/production/_ext/2017208766/sha1_routines.o: \
 ../src/config/default/library/cryptoauthlib/atca_config_check.h:
 ../src/config/default/library/cryptoauthlib/atca_config.h:
 ../src/config/default/definitions.h:
-../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
+../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h:
+../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h:
 ../src/config/default/device.h:
 ../src/packs/ATSAMD21G18A_DFP/samd21g18a.h:
 ../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h:
@@ -233,6 +236,7 @@ build/default/production/_ext/2017208766/sha1_routines.o: \
 ../src/config/default/device.h:
 ../src/config/default/toolchain_specifics.h:
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
+../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
 ../src/config/default/peripheral/evsys/plib_evsys.h:
 ../src/config/default/system/command/sys_command.h:
 ../src/config/default/configuration.h:

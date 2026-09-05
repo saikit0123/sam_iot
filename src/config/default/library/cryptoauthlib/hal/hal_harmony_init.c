@@ -32,5 +32,14 @@
 
 #include "cryptoauthlib.h"
 
+atca_plib_i2c_api_t sercom3_plib_i2c_api = {
+    .read = SERCOM3_I2C_Read,
+    .write = SERCOM3_I2C_Write,
+    .is_busy = SERCOM3_I2C_IsBusy,
+    .error_get = SERCOM3_I2C_ErrorGet,
+    .transfer_setup = SERCOM3_I2C_TransferSetup
+};
+
+
 
 
