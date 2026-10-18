@@ -36,18 +36,29 @@
 extern SYSTEM_OBJECTS sysObj;
 static DRV_HANDLE wdrvHandle;
 static tTimer_details osalTimerDetails;
+static tTimer_details osalTimerDetails2;
 static TimerHandle_t wifiMgrHandle;
+static TimerHandle_t wifiMgrHandle2;
 
 // *****************************************************************************
 static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg );
 static void osalTimerReload( tMcuMgrSphereMsg* sphereMsg );
 static void wifiMgr_wincInit();
 static void wifiMgr_cloudWifiInit();
+static void wifiMgr_MqttInit();
+static void wifiMgr_changeState(uint16_t changeState);
+static void wifi_mgr_cloud_periodic_func();
 
 // look up function for winc init
 static tMcuMgrDispatchMsg dispatchCommonDoHandler[] =
 {
     { PT_GENERAL_OSAL_TIMER, osalTimerReload },
+};
+
+static tMcuMgrDispatchMsg dispatchConnectingDoHandler[] =
+{
+    { PT_GENERAL_OSAL_TIMER, osalTimerReload },
+    { PT_CLOUD_OSAL_TIMER, wifi_mgr_cloud_periodic_func }
 };
 
 static const tFsmLookUp wifiMgrFsm[] =
@@ -66,27 +77,27 @@ static const tFsmLookUp wifiMgrFsm[] =
         .doFuncElement = FUNC_ELEMENT(dispatchCommonDoHandler),
         .exitFunc = NULL
     },
-    [WIFI_MGR_CLOUD_WIFI_CONFIGURE] = 
-    {
-        .entryFunc = NULL,
-        .doFunc = NULL,
-        .doFuncElement = 0,
-        .exitFunc = NULL
-    },
     [WIFI_MGR_CLOUD_WIFI_CONNECTING] = 
     {
         .entryFunc = NULL,
-        .doFunc = NULL,
-        .doFuncElement = 0,
+        .doFunc = dispatchConnectingDoHandler,
+        .doFuncElement = FUNC_ELEMENT(dispatchConnectingDoHandler),
         .exitFunc = NULL
     },
     [WIFI_MGR_CLOUD_WIFI_CONNECTED] = 
     {
-        .entryFunc = NULL,
-        .doFunc = NULL,
-        .doFuncElement = 0,
+        .entryFunc = wifiMgr_MqttInit,
+        .doFunc = dispatchConnectingDoHandler,
+        .doFuncElement = FUNC_ELEMENT(dispatchConnectingDoHandler),
         .exitFunc = NULL
-    }
+    },
+    [WIFI_MGR_CLOUD_WIFI_DISCONNECTED] = 
+    {
+        .entryFunc = NULL,
+        .doFunc = dispatchCommonDoHandler,
+        .doFuncElement = FUNC_ELEMENT(dispatchCommonDoHandler),
+        .exitFunc = NULL
+    },
 };
 
 // *****************************************************************************
@@ -110,7 +121,8 @@ static const tMcuMgrDispatchMsg dispatchMsg[] =
 static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg )
 {
     SYS_CONSOLE_PRINT("\r\n Wifi mgr init function\r\n");
-    
+    SYS_DEBUG_ErrorLevelSet(SYS_ERROR_FATAL);
+
     // init wifi driver
     WDRV_WINC_Tasks(sysObj.drvWifiWinc);
 
@@ -124,12 +136,20 @@ static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg )
     {
         // initialisation example task, osal timer
         osalTimerDetails.name = "Cloud Initialization";
-        osalTimerDetails.timer = 500;
+        osalTimerDetails.timer = 100;
         osalTimerDetails.oneShot = false;
         osalTimerDetails.callbackFunc = commonTimerCallbackFunc;
         osalTimerDetails.source = COMPONENT_ID_WIFI_MGR;
         osalTimerDetails.msgId = PT_GENERAL_OSAL_TIMER;
         wifiMgrHandle = createOsalTimer(&osalTimerDetails);
+
+        osalTimerDetails2.name = "Cloud Periodic Function";
+        osalTimerDetails2.timer = 100;
+        osalTimerDetails2.oneShot = false;
+        osalTimerDetails2.callbackFunc = commonTimerCallbackFunc;
+        osalTimerDetails2.source = COMPONENT_ID_WIFI_MGR;
+        osalTimerDetails2.msgId = PT_CLOUD_OSAL_TIMER;
+        wifiMgrHandle2 = createOsalTimer(&osalTimerDetails2);
     }
     
     fsm_init(wifiMgrFsm);
@@ -139,7 +159,23 @@ static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg )
 
 static void osalTimerReload( tMcuMgrSphereMsg* sphereMsg )
 {
-    SYS_CONSOLE_PRINT("\r\n Wifi mgr osal timer reload function\r\n");
+    SYS_CONSOLE_PRINT("\r\n Wifi mgr osal timer reload function in %d state\r\n", fsm_getCurrentState());
+    static uint8_t counter = 0;
+    counter++;
+    counter = counter % 5;
+
+    WDRV_WINC_Tasks(sysObj.drvWifiWinc);
+
+    if( fsm_getCurrentState() == WIFI_MGR_CLOUD_WIFI_CONNECTED )
+    {
+        static uint16_t number=0;
+        cloud_publish_msg(number++);
+    }
+}
+
+static void wifi_mgr_cloud_periodic_func()
+{
+    cloudPeriodicFunc();
 }
 
 static void wifiMgr_wincInit()
@@ -147,39 +183,30 @@ static void wifiMgr_wincInit()
     // run example task
     SYS_CONSOLE_PRINT("\r\n Wifi mgr winc init function\r\n");
     startTimer(wifiMgrHandle);
+    startTimer(wifiMgrHandle2);
     fsm_changeState( wifiMgrFsm, WIFI_MGR_CLOUD_WIFI_INIT );
 }
 
 static void wifiMgr_cloudWifiInit()
 {
     SYS_CONSOLE_PRINT("\r\n Wifi mgr cloud wifi init function\r\n");
-    int wifi_status = cloud_wifi_init(wdrvHandle);
+    int wifi_status = cloud_wifi_init(wdrvHandle, wifiMgr_changeState);
     if(wifi_status == M2M_SUCCESS)
     {
         SYS_CONSOLE_PRINT("\r\n Cloud init successfully\r\n");
+        //fsm_changeState( wifiMgrFsm, WIFI_MGR_CLOUD_WIFI_CONNECTING );
     }
-    //cloud_wifi_init(wdrvHandle);
-    // if (wifi_status == M2M_SUCCESS)
-    // {
-    //     // Set the current state
-    //     cloud_iot_set_status(CLOUD_STATE_WIFI_CONFIGURE, CLOUD_STATUS_SUCCESS,
-    //                             "The cloud IoT Demo WINC1500 WIFI Init was successful.");
+}
 
-    //     // Set the next cloud WIFI state
-    //     g_cloud_wifi_state = CLOUD_STATE_WIFI_CONFIGURE;
-    // }
-    // else
-    // {
-    //     // Set the current state
-    //     cloud_iot_set_status(CLOUD_STATE_ATECCx08A_INIT, CLOUD_STATUS_ATECCx08A_INIT_FAILURE,
-    //                             "The cloud IoT Demo WINC1500 WIFI init was not successful.");
+static void wifiMgr_MqttInit()
+{
+    SYS_CONSOLE_PRINT("\r\n Mqtt init function\r\n");
+    cloudMqttInit();
+}
 
-    //     debug_printError("An WINC1500 WIFI initialization error has occurred.");
-    //     debug_printError("Stopping the cloud IoT demo.");
-
-    //     // An error has occurred during initialization.  Stop the demo.
-    //     g_cloud_wifi_state = CLOUD_STATE_UNKNOWN;
-    // }
+static void wifiMgr_changeState(uint16_t changeState)
+{
+    fsm_changeState( wifiMgrFsm, changeState );
 }
 
 // *****************************************************************************

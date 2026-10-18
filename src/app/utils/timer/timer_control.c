@@ -41,7 +41,7 @@
 void commonTimerCallbackFunc( TimerHandle_t xTimer )
 {
     // send sphere msg over here
-    SYS_CONSOLE_PRINT("\r\n Common callback function\r\n");
+    //SYS_CONSOLE_PRINT("\r\n Common callback function\r\n");
     tTimer_details *timerDetails = (tTimer_details *)pvTimerGetTimerID(xTimer);
     tMcuMgrSphereMsg payload =
     {

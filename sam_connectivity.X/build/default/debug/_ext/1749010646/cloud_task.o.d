@@ -72,8 +72,10 @@ build/default/debug/_ext/1749010646/cloud_task.o: \
  ../src/config/default/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
  ../src/config/default/definitions.h \
- ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
+ ../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h \
+ ../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h \
  ../src/config/default/device.h \
+ ../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h \
  ../src/config/default/peripheral/evsys/plib_evsys.h \
  ../src/config/default/system/command/sys_command.h \
  ../src/config/default/system/system.h \
@@ -211,7 +213,10 @@ build/default/debug/_ext/1749010646/cloud_task.o: \
  ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTFormat.h \
  ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/StackTrace.h \
  ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.h \
- ../src/third_party/paho_mqtt_embedded_c/platform/timer_interface.h
+ ../src/third_party/paho_mqtt_embedded_c/platform/timer_interface.h \
+ ../src/app/wifi_mgr/wifi_mgr.h ../src/app/mcu_mgr/mcu_mgr.h \
+ ../src/app/mcu_mgr/msg_id.h ../src/app/utils/fsm/inc_folder/fsm.h \
+ ../src/third_party/parson_json/parson.h
 ../src/app/wifi_mgr/cloud_task.h:
 ../src/config/default/driver/winc/include/wdrv_winc.h:
 ../src/config/default/configuration.h:
@@ -286,8 +291,10 @@ build/default/debug/_ext/1749010646/cloud_task.o: \
 ../src/config/default/toolchain_specifics.h:
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
 ../src/config/default/definitions.h:
-../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
+../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h:
+../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h:
 ../src/config/default/device.h:
+../src/config/default/peripheral/nvmctrl/plib_nvmctrl.h:
 ../src/config/default/peripheral/evsys/plib_evsys.h:
 ../src/config/default/system/command/sys_command.h:
 ../src/config/default/system/system.h:
@@ -427,3 +434,8 @@ build/default/debug/_ext/1749010646/cloud_task.o: \
 ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/StackTrace.h:
 ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.h:
 ../src/third_party/paho_mqtt_embedded_c/platform/timer_interface.h:
+../src/app/wifi_mgr/wifi_mgr.h:
+../src/app/mcu_mgr/mcu_mgr.h:
+../src/app/mcu_mgr/msg_id.h:
+../src/app/utils/fsm/inc_folder/fsm.h:
+../src/third_party/parson_json/parson.h:

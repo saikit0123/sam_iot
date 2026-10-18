@@ -19,6 +19,7 @@
                 <sourceRootElem>../src/app/utils/timer</sourceRootElem>
                 <sourceRootElem>../src/app/utils/osal_sphere</sourceRootElem>
                 <sourceRootElem>../src/third_party/paho_mqtt_embedded_c</sourceRootElem>
+                <sourceRootElem>../src/third_party/parson_json</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

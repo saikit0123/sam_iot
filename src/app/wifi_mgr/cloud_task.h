@@ -73,7 +73,17 @@ typedef struct
 // Section: Function Prototype
 // ******************************************************************************
 // ******************************************************************************
-int cloud_wifi_init(DRV_HANDLE handle);
+int cloud_wifi_init(DRV_HANDLE handle, void* callbackFunc);
+
+int cloudMqttInit();
+
+int cloud_wifi_send_data(uint8_t *send_buffer, uint32_t send_length, uint32_t timeout_ms);
+
+int cloud_wifi_read_data(uint8_t *read_buffer, uint32_t read_length, uint32_t timeout_ms);
+
+int cloud_publish_msg(uint8_t number);
+
+int cloudPeriodicFunc();
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

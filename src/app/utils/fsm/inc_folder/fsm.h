@@ -69,6 +69,8 @@ void fsm_dispatch( const tFsmLookUp* fsmLut, tMcuMgrSphereMsg* sphereMsg );
 
 void fsm_changeState( const tFsmLookUp* fsmLut, uint16_t targetState );
 
+uint16_t fsm_getCurrentState();
+
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }

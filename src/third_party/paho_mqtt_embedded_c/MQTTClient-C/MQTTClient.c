@@ -299,17 +299,19 @@ int MQTTYield(MQTTClient* c, int timeout_ms)
     int rc = SUCCESS;
     Timer timer;
 
-    TimerInit(&timer);
-    TimerCountdownMS(&timer, timeout_ms);
+    // TimerInit(&timer);
+    // TimerCountdownMS(&timer, timeout_ms);
 
-	do
-    {
-        if (cycle(c, &timer) == FAILURE)
-        {
-            rc = FAILURE;
-            break;
-        }
-	} while (!TimerIsExpired(&timer));
+    cycle(c, &timer);
+
+	// do
+    // {
+    //     if (cycle(c, &timer) == FAILURE)
+    //     {
+    //         rc = FAILURE;
+    //         break;
+    //     }
+	// } while (!TimerIsExpired(&timer));
         
     return rc;
 }
@@ -365,7 +367,8 @@ int MQTTConnect(MQTTClient* c, MQTTPacket_connectData* options)
     int rc = FAILURE;
     MQTTPacket_connectData default_options = MQTTPacket_connectData_initializer;
     int len = 0;
-
+	default_options.MQTTVersion = 4;
+	default_options.clientID.cstring = "FreeRTOS";
 #if defined(MQTT_TASK)
 	MutexLock(&c->mutex);
 #endif

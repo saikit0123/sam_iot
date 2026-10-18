@@ -80,8 +80,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
  */
 int mqtt_packet_read(Network *network, unsigned char *read_buffer, int length, int timeout_ms)
  {
-    return 0;
-    //return cloud_wifi_read_data(read_buffer, length, timeout_ms);
+    return cloud_wifi_read_data(read_buffer, length, timeout_ms);
  }
 
 /**
@@ -96,6 +95,5 @@ int mqtt_packet_read(Network *network, unsigned char *read_buffer, int length, i
  */
 int mqtt_packet_write(Network *network, unsigned char *send_buffer, int length, int timeout_ms)
 {
-    return 0;
-    //return cloud_wifi_send_data(send_buffer, length, timeout_ms);
+    return cloud_wifi_send_data(send_buffer, length, timeout_ms);
 }

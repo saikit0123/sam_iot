@@ -40,6 +40,7 @@ typedef enum
 {
     PT_SPHERE_START_REQ_ID =2,
     PT_GENERAL_OSAL_TIMER,
+    PT_CLOUD_OSAL_TIMER
 } tMcuMgrMsgId;
 
 // ******************************************************************************

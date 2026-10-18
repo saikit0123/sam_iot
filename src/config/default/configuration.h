@@ -89,6 +89,10 @@ extern "C" {
 #define SYS_CMD_RTOS_STACK_SIZE                256
 #define SYS_CMD_RTOS_TASK_PRIORITY             1
 
+#define SYS_CMD_SMALL_STACK_SIZE               512
+#define SYS_CMD_MED_STACK_SIZE                 1024
+#define SYS_CMD_HIGH_STACK_SIZE                4096
+
 
 #define SYS_DEBUG_ENABLE
 #define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG

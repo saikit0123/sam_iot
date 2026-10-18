@@ -111,3 +111,8 @@ void fsm_changeState( const tFsmLookUp* fsmLut, uint16_t targetState )
     fsmHandler.currentState = targetState;
     fsmHandler.previousState = currentState;
 }
+
+uint16_t fsm_getCurrentState()
+{
+    return fsmHandler.currentState;
+}

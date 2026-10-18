@@ -213,7 +213,10 @@ build/default/production/_ext/1749010646/cloud_task.o: \
  ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTFormat.h \
  ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/StackTrace.h \
  ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.h \
- ../src/third_party/paho_mqtt_embedded_c/platform/timer_interface.h
+ ../src/third_party/paho_mqtt_embedded_c/platform/timer_interface.h \
+ ../src/app/wifi_mgr/wifi_mgr.h ../src/app/mcu_mgr/mcu_mgr.h \
+ ../src/app/mcu_mgr/msg_id.h ../src/app/utils/fsm/inc_folder/fsm.h \
+ ../src/third_party/parson_json/parson.h
 ../src/app/wifi_mgr/cloud_task.h:
 ../src/config/default/driver/winc/include/wdrv_winc.h:
 ../src/config/default/configuration.h:
@@ -431,3 +434,8 @@ build/default/production/_ext/1749010646/cloud_task.o: \
 ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/StackTrace.h:
 ../src/third_party/paho_mqtt_embedded_c/MQTTPacket/MQTTPacket.h:
 ../src/third_party/paho_mqtt_embedded_c/platform/timer_interface.h:
+../src/app/wifi_mgr/wifi_mgr.h:
+../src/app/mcu_mgr/mcu_mgr.h:
+../src/app/mcu_mgr/msg_id.h:
+../src/app/utils/fsm/inc_folder/fsm.h:
+../src/third_party/parson_json/parson.h:

@@ -103,6 +103,14 @@
 #define WINC_INT_EIC_EXTINT2_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18U)) & 0x01U)
 #define WINC_INT_EIC_EXTINT2_PIN                  PORT_PIN_PA18
 
+/*** Macros for I2C_SERCOM3_PAD0 pin ***/
+#define I2C_SERCOM3_PAD0_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 22U)) & 0x01U)
+#define I2C_SERCOM3_PAD0_PIN                  PORT_PIN_PA22
+
+/*** Macros for I2C_SERCOM3_PAD1 pin ***/
+#define I2C_SERCOM3_PAD1_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 23U)) & 0x01U)
+#define I2C_SERCOM3_PAD1_PIN                  PORT_PIN_PA23
+
 // *****************************************************************************
 /* PORT Group
 

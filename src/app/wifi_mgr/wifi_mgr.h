@@ -24,6 +24,7 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+#include "mcu_mgr.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -44,9 +45,9 @@ typedef enum
 {
     WIFI_MGR_WINC_INIT,
     WIFI_MGR_CLOUD_WIFI_INIT,
-    WIFI_MGR_CLOUD_WIFI_CONFIGURE,
     WIFI_MGR_CLOUD_WIFI_CONNECTING,
     WIFI_MGR_CLOUD_WIFI_CONNECTED,
+    WIFI_MGR_CLOUD_WIFI_DISCONNECTED
 } tWifiMgr_fsmState;
 
 // ******************************************************************************

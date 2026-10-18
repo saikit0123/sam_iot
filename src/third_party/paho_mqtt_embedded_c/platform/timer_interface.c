@@ -102,6 +102,7 @@ int get_time_of_day(struct timeval *time)
  */
 void TimerInit(Timer *timer)
 {
+#if 0
     if (timer == NULL)
     {
         return;
@@ -109,6 +110,7 @@ void TimerInit(Timer *timer)
     
 	timer->end_time.tv_sec  = 0;
 	timer->end_time.tv_usec = 0;
+#endif
 }
 
 /**
@@ -122,6 +124,7 @@ void TimerInit(Timer *timer)
  */
 char TimerIsExpired(Timer *timer)
 {
+#if 0
 	struct timeval time_now;
 	struct timeval time_result;
 
@@ -135,6 +138,8 @@ char TimerIsExpired(Timer *timer)
 	timer_subtract(&timer->end_time, &time_now, &time_result);
 
 	return (time_result.tv_sec < 0 || (time_result.tv_sec == 0 && time_result.tv_usec <= 0));
+#endif
+    return 0;
 }
 
 /**
@@ -169,6 +174,7 @@ void TimerCountdownMS(Timer *timer, unsigned int timeout_ms)
  */
 void TimerCountdown(Timer *timer, unsigned int timeout)
 {
+#if 0
 	struct timeval time_now;
 	struct timeval time_interval = {timeout, 0};
 
@@ -180,6 +186,7 @@ void TimerCountdown(Timer *timer, unsigned int timeout)
 	get_time_of_day(&time_now);
 
 	timer_add(&time_now, &time_interval, &timer->end_time);
+#endif
 }
 
 /**
@@ -191,6 +198,8 @@ void TimerCountdown(Timer *timer, unsigned int timeout)
  */
 int TimerLeftMS(Timer *timer)
 {
+    return 600;
+#if 0
 	int result_ms = 0;
 	struct timeval time_now;
     struct timeval time_result;
@@ -209,4 +218,5 @@ int TimerLeftMS(Timer *timer)
 	}
 
 	return result_ms;
+#endif
 }

@@ -32,6 +32,9 @@
 #include "tng_atca.h"
 #include "network_interface.h"
 #include "MQTTClient.h"
+#include "wifi_mgr.h"
+#include "fsm.h"
+#include "parson.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -39,8 +42,10 @@
 // *****************************************************************************
 // *****************************************************************************
 #define SECURE_ELEMENT_ADDRESS      0x6C
-#define CLOUD_ENDPOINT              "mqtt.googleapis.com"
-#define CLOUD_PORT                  (8883)
+//#define CLOUD_ENDPOINT              "mqtt.googleapis.com"
+#define CLOUD_ENDPOINT              "test.mosquitto.org"
+//#define CLOUD_PORT                  (8883)
+#define CLOUD_PORT                  (1883)
 #define NEW_SOCKET_ERROR(err) { err, #err }
 #define MAX_WIFI_CREDENTIALS_LENGTH 31
 #define CERT_SN_MAX_LEN             32
@@ -60,6 +65,8 @@
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
+typedef void (*callbackFunction)(uint16_t changeState);
+callbackFunction changeStateCallback;
 static cloudTaskConnection m_cloudTask_connection;
 static Network g_mqtt_network;
 MQTTClient g_mqtt_client;
@@ -71,14 +78,25 @@ char config_thing_id[130] =  "BAAAAADD1DBAAADD1D";
 volatile enum cloud_iot_state g_cloud_wifi_state = CLOUD_STATE_WINC1500_INIT;
 static socket_connection g_socket_connection;
 static int32_t g_rx_buffer_length = 0;
+static uint8_t g_rx_buffer[MQTT_BUFFER_SIZE];
+static uint32_t g_rx_buffer_location = 0;
+static char g_mqtt_update_topic_name[257];
+
 static uint32_t g_tx_size = 0;
 static cloudTask_status g_wifi_status = WIFI_STATUS_UNKNOWN;
-static char ssid[MAX_WIFI_CREDENTIALS_LENGTH];
-static char pass[MAX_WIFI_CREDENTIALS_LENGTH];
+//static char ssid[MAX_WIFI_CREDENTIALS_LENGTH] = "lam_wifi";
+//static char pass[MAX_WIFI_CREDENTIALS_LENGTH] = "ParcParc9704137!";
+static char ssid[MAX_WIFI_CREDENTIALS_LENGTH] = "S25";
+static char pass[MAX_WIFI_CREDENTIALS_LENGTH] = "12345678";
 static uint32_t g_ecdh_key_slot_index = 0;
 static uint16_t g_ecdh_key_slot[] = { 2 };
 static uint8_t g_mqtt_rx_buffer[MQTT_BUFFER_SIZE];
 static uint8_t g_mqtt_tx_buffer[MQTT_BUFFER_SIZE];
+static int config_get_client_pub_topic(char* buf, size_t buflen);
+static char g_mqtt_update_delta_topic_name[257];
+
+MQTTPacket_connectData mqtt_options = MQTTPacket_connectData_initializer;
+
 static const ErrorInfo g_socket_error_info[] =
 {
     NEW_SOCKET_ERROR(SOCK_ERR_NO_ERROR),
@@ -103,18 +121,28 @@ static const ErrorInfo g_socket_error_info[] =
 // Section: Application Callback Functions
 // *****************************************************************************
 // *****************************************************************************
+#if 0
 static int config_set_thing_id();
+#endif
 static void APP_ExampleDHCPAddressEventCallback(DRV_HANDLE handle, uint32_t ipAddress);
 static const char* get_socket_error_name(int error_code);
+static void cloud_subscribe_callback(MessageData *data);
+static int config_get_client_sub_topic(char* buf, size_t buflen);
+
+#if 0
 static int8_t transfer_ecc_certs_to_winc(void);
 static int8_t ecc_transfer_certificates();
+#endif
+
 static const char* bin2hex(const void* data, size_t data_size);
+#if 0
 static int8_t winc_certs_append_file_buf(uint32_t* buffer32, uint32_t buffer_size,
                                          const char* file_name, uint32_t file_size,
                                          const uint8_t* file_data);
 static size_t winc_certs_get_total_files_size(const tstrTlsSrvSecHdr* header);
 static void winc_wifi_ssl_callback(uint8_t u8MsgType, void *pvMsg);
 static void ecc_process_request(tstrEccReqInfo *ecc_request);
+
 static int8_t ecdh_derive_client_shared_secret(tstrECPoint *server_public_key,
                                                uint8_t *    ecdh_shared_secret,
                                                tstrECPoint *client_public_key);
@@ -126,12 +154,29 @@ static int8_t ecdsa_process_sign_gen_request(tstrEcdsaSignReqInfo *sign_request,
 static int8_t ecdh_derive_server_shared_secret(uint16_t     private_key_id,
             tstrECPoint *client_public_key,
             uint8_t *    ecdh_shared_secret);
+#endif
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Local Functions
 // *****************************************************************************
 // *****************************************************************************
+static int config_get_client_pub_topic(char* buf, size_t buflen)
+{
+    int rv;
+
+    if (buf && buflen)
+    {
+        rv = snprintf(buf, buflen, "devices/sn1/");
+        if (0 < rv && rv < buflen)
+        {
+            buf[rv] = 0;
+            return 0;
+        }
+    }
+    return -1;
+}
+
 static const char* bin2hex(const void* data, size_t data_size)
 {
     static char buf[256];
@@ -154,6 +199,7 @@ static const char* bin2hex(const void* data, size_t data_size)
     return buf;
 }
 
+#if 0
 static int8_t ecdh_derive_client_shared_secret(tstrECPoint *server_public_key,
                                                uint8_t *    ecdh_shared_secret,
                                                tstrECPoint *client_public_key)
@@ -659,6 +705,7 @@ static int8_t transfer_ecc_certs_to_winc(void)
 
     return ret_value;
 }
+#endif
 
 static const char* get_socket_error_name(int error_code)
 {
@@ -672,6 +719,24 @@ static const char* get_socket_error_name(int error_code)
     return "UNKNOWN";
 }
 
+static int config_get_client_sub_topic(char* buf, size_t buflen)
+{
+    int rv;
+
+    if (buf && buflen)
+    {
+        rv = snprintf(buf, buflen, "devices/sn2/");
+
+        if (0 < rv && rv < buflen)
+        {
+            buf[rv] = 0;
+            return 0;
+        }
+    }
+    return -1;
+}
+
+#if 0
 static int config_set_thing_id()
 {
     uint8_t serial_num[9];
@@ -694,6 +759,7 @@ static int config_set_thing_id()
 
     return ATCA_SUCCESS;
 }
+#endif
 
 static void APP_ExampleDHCPAddressEventCallback(DRV_HANDLE handle, uint32_t ipAddress)
 {
@@ -728,7 +794,8 @@ static void cloud_dns_resolve_handler(uint8_t *pu8DomainName, uint32_t u32Server
         do
         {
             // Create the socket
-            new_socket = socket(AF_INET, SOCK_STREAM, 1);
+            // no ssl socket
+            new_socket = socket(AF_INET, SOCK_STREAM, 0);
             if (new_socket < 0)
             {
                 SYS_CONSOLE_PRINT("Failed to create the socket.");
@@ -812,6 +879,10 @@ static void socket_callback_handler(SOCKET socket, uint8_t messageType, void *pM
             {
                 // Set the state to connected to the cloud IoT
                 g_cloud_wifi_state = CLOUD_STATE_CLOUD_CONNECTED;
+                if( fsm_getCurrentState() == WIFI_MGR_CLOUD_WIFI_INIT )
+                {
+                    changeStateCallback(WIFI_MGR_CLOUD_WIFI_CONNECTED);
+                }
             }
             else
             {
@@ -890,24 +961,33 @@ static void socket_callback_handler(SOCKET socket, uint8_t messageType, void *pM
     }
 }
 
+static void cloud_subscribe_callback(MessageData *data)
+{
+	SYS_CONSOLE_PRINT("Message arrived on topic %.*s: %.*s\n", data->topicName->lenstring.len, data->topicName->lenstring.data,
+		data->message->payloadlen, data->message->payload);
+}
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Public Functions
 // *****************************************************************************
 // *****************************************************************************
-int cloud_wifi_init(DRV_HANDLE handle)
+int cloud_wifi_init(DRV_HANDLE handle, void* callbackFunc)
 {
     int8_t status = 0;
+    changeStateCallback = callbackFunc;
     memset(&m_cloudTask_connection, 0, sizeof(m_cloudTask_connection));
     extern ATCAIfaceCfg atecc608_0_init_data;
     // Initialize the cryptoauthlib stack
     atecc608_0_init_data.atcai2c.address = SECURE_ELEMENT_ADDRESS;
+#if 0
     if ((status = atcab_init(&atecc608_0_init_data)) != ATCA_SUCCESS)
     {
+        SYS_CONSOLE_PRINT("\r\natcab init status:0x%x", status);
         return status;
     }
     config_set_thing_id();
-
+#endif
    
     if ((status = WDRV_WINC_IPUseDHCPSet(handle, &APP_ExampleDHCPAddressEventCallback))  != WDRV_WINC_STATUS_OK)
     {
@@ -972,6 +1052,7 @@ int cloud_wifi_init(DRV_HANDLE handle)
     SYS_CONSOLE_PRINT("Connecting with MCHP certs\r\n\r\n");
 #endif
 
+#if 0
 #ifndef CLOUD_CONFIG_GCP
     if( !transfer_ecc_certs_to_winc() )
     {
@@ -983,7 +1064,7 @@ int cloud_wifi_init(DRV_HANDLE handle)
     {
         return 1;
     }
-
+#endif
     // Initialize the MQTT library
     g_mqtt_network.mqttread  = &mqtt_packet_read;
     g_mqtt_network.mqttwrite = &mqtt_packet_write;
@@ -992,6 +1073,179 @@ int cloud_wifi_init(DRV_HANDLE handle)
                     g_mqtt_tx_buffer, sizeof(g_mqtt_tx_buffer),
                     g_mqtt_rx_buffer, sizeof(g_mqtt_rx_buffer));
 
+    WDRV_WINC_STATUS STATUS = WDRV_WINC_BSSConnect(handle, &bssCtx, &authCtx, NULL);
+    //WDRV_WINC_STATUS STATUS = WDRV_WINC_BSSReconnect(handle, NULL);
+
+    if (WDRV_WINC_STATUS_OK == STATUS)
+    {
+        SYS_CONSOLE_PRINT("\rConnecting wifi\r\n");
+    }
+    else
+    {
+        SYS_CONSOLE_PRINT("\rConnect wifi unsuccessfully:%d\r\n", STATUS);
+    }
 
     return status;
+}
+
+int cloudMqttInit()
+{
+    SYS_CONSOLE_PRINT("Connecting Mqtt\r\n");
+    int result = MQTTConnect(&g_mqtt_client, &mqtt_options);
+    SYS_CONSOLE_PRINT("Mqtt connect result:%d\r\n", result);
+    config_get_client_sub_topic(g_mqtt_update_delta_topic_name , sizeof(g_mqtt_update_delta_topic_name));
+    MQTTSubscribe(&g_mqtt_client, "FreeRTOS2", 0, &cloud_subscribe_callback);
+}
+
+int cloudPeriodicFunc()
+{
+    MQTTYield(&g_mqtt_client, 0); // periodic check subscribe msg
+}
+
+int cloud_publish_msg(uint8_t number)
+{
+    int mqtt_status = FAILURE;
+    MQTTMessage message;
+    char json_message[256];
+    JSON_Value *update_message_value = NULL;
+    JSON_Object *update_message_object = NULL;
+
+    memset(json_message, 0x00, sizeof(json_message));
+
+    // Create the update message
+    update_message_value   = json_value_init_object();
+    update_message_object  = json_value_get_object(update_message_value);
+
+    do
+    {
+        // Only publish message when in the reporting state
+        if (g_mqtt_client.isconnected != 1)
+        {
+            break;
+        }
+        
+
+        json_object_dotset_number(update_message_object, "state.count", (number));
+        json_serialize_to_buffer(update_message_value, json_message, sizeof(json_message));
+        message.qos      = QOS0;
+        message.retained = 0;
+        message.dup      = 0;
+        message.id       = 1;
+
+        message.payload = (void*)json_message;
+        message.payloadlen = strlen(json_message);
+
+        SYS_CONSOLE_PRINT("Publishing MQTT Shadow Update Message:");
+        //console_print_hex_dump(message.payload, message.payloadlen);
+
+        config_get_client_pub_topic(g_mqtt_update_topic_name, sizeof(g_mqtt_update_topic_name));
+        mqtt_status = MQTTPublish(&g_mqtt_client, g_mqtt_update_topic_name, &message);
+        if (mqtt_status == SUCCESS)
+        {
+            SYS_CONSOLE_PRINT("The cloud IoT Demo publish the MQTT shadow update message.");
+        }
+        else
+        {
+            SYS_CONSOLE_PRINT("The cloud IoT Demo failed to publish the MQTT shadow update message.");
+        }
+    }
+    while (false);
+
+    // Free allocated memory
+    json_value_free(update_message_value);
+}
+
+int cloud_wifi_send_data(uint8_t *send_buffer, uint32_t send_length, uint32_t timeout_ms)
+{
+    int status = SUCCESS;
+
+    g_wifi_status = send(g_socket_connection.socket, send_buffer, send_length, 0);
+    g_tx_size = send_length;
+
+    do
+    {
+        // Wait until the outgoing message was sent
+        m2m_wifi_handle_events();
+
+        if (g_wifi_status == WIFI_STATUS_ERROR)
+        {
+            status = FAILURE;
+
+            // Break the do/while loop
+            break;
+        }
+        atca_delay_ms(1);
+    }
+    while ((g_wifi_status != WIFI_STATUS_MESSAGE_SENT));
+
+
+
+
+    return (status == SUCCESS) ? (int)send_length : status;
+}
+
+int cloud_wifi_read_data(uint8_t *read_buffer, uint32_t read_length, uint32_t timeout_ms)
+{
+    int status = SUCCESS;
+
+    if (g_rx_buffer_length >= read_length)
+    {
+        status = SUCCESS;
+
+        // Get the data from the existing received buffer
+        memcpy(&read_buffer[0], &g_rx_buffer[g_rx_buffer_location], read_length);
+
+        g_rx_buffer_location += read_length;
+        g_rx_buffer_length -= read_length;
+
+
+    }
+    else
+    {
+        // Reset the message buffer information
+        g_wifi_status = WIFI_STATUS_UNKNOWN;
+        g_rx_buffer_location = 0;
+        g_rx_buffer_length = 0;
+
+        memset(&g_rx_buffer[0], 0, sizeof(g_rx_buffer));
+
+        // Receive the incoming message
+        g_wifi_status = recv(g_socket_connection.socket, g_rx_buffer, sizeof(g_rx_buffer), timeout_ms);
+        atca_delay_ms(5);
+        do
+        {
+            // Wait until the incoming message or error was received
+            m2m_wifi_handle_events();
+
+            if (g_wifi_status == WIFI_STATUS_TIMEOUT)
+            {
+                status = FAILURE;
+                // Break the do/while loop
+                break;
+            }
+            else if (g_wifi_status == WIFI_STATUS_ERROR)
+            {
+                status = FAILURE;
+
+                // Break the do/while loop
+                break;
+            }
+
+            if (g_wifi_status == WIFI_STATUS_MESSAGE_RECEIVED)
+            {
+                status = SUCCESS;
+
+                memcpy(&read_buffer[0], &g_rx_buffer[0], read_length);
+
+                g_rx_buffer_location += read_length;
+                g_rx_buffer_length -= read_length;
+
+            }
+
+
+        }
+        while ((g_wifi_status != WIFI_STATUS_MESSAGE_RECEIVED));  // && (--timeout > 0));
+    }
+
+    return (status == SUCCESS) ? (int)read_length : status;
 }
