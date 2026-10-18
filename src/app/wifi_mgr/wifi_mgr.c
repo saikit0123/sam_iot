@@ -144,7 +144,7 @@ static void wifiMgr_initFunc( tMcuMgrSphereMsg* sphereMsg )
         wifiMgrHandle = createOsalTimer(&osalTimerDetails);
 
         osalTimerDetails2.name = "Cloud Periodic Function";
-        osalTimerDetails2.timer = 100;
+        osalTimerDetails2.timer = 50;
         osalTimerDetails2.oneShot = false;
         osalTimerDetails2.callbackFunc = commonTimerCallbackFunc;
         osalTimerDetails2.source = COMPONENT_ID_WIFI_MGR;
@@ -171,6 +171,7 @@ static void osalTimerReload( tMcuMgrSphereMsg* sphereMsg )
         static uint16_t number=0;
         cloud_publish_msg(number++);
     }
+    //cloudPeriodicFunc();
 }
 
 static void wifi_mgr_cloud_periodic_func()

@@ -209,18 +209,18 @@ int keepalive(MQTTClient* c)
         goto exit;
     }
 
-    if (TimerIsExpired(&c->ping_timer))
-    {
-        if (!c->ping_outstanding)
-        {
-            Timer timer;
-            TimerInit(&timer);
-            TimerCountdownMS(&timer, 1000);
-            int len = MQTTSerialize_pingreq(c->buf, c->buf_size);
-            if (len > 0 && (rc = sendPacket(c, len, &timer)) == SUCCESS) // send the ping packet
-                c->ping_outstanding = 1;
-        }
-    }
+    // if (TimerIsExpired(&c->ping_timer))
+    // {
+    //     if (!c->ping_outstanding)
+    //     {
+    //         Timer timer;
+    //         TimerInit(&timer);
+    //         TimerCountdownMS(&timer, 1000);
+    //         int len = MQTTSerialize_pingreq(c->buf, c->buf_size);
+    //         if (len > 0 && (rc = sendPacket(c, len, &timer)) == SUCCESS) // send the ping packet
+    //             c->ping_outstanding = 1;
+    //     }
+    // }
 
 exit:
     return rc;
@@ -237,10 +237,10 @@ int cycle(MQTTClient* c, Timer* timer)
 
     switch (packet_type)
     {
-        case CONNACK:
-        case PUBACK:
-        case SUBACK:
-            break;
+        // case CONNACK:
+        // case PUBACK:
+        // case SUBACK:
+        //     break;
         case PUBLISH:
         {
             MQTTString topicName;
