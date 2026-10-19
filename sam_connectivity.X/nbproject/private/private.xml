@@ -6,6 +6,7 @@
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/app/utils/fsm/fsm.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/driver/winc/dev/gpio/wdrv_winc_eint.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/app/wifi_mgr/cloud_task.c</file>
+            <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/osal/osal_freertos.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/exceptions.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.c</file>
             <file>file:/C:/Users/sklam/Desktop/project%20milestone/iot_sam/sam_iot/src/third_party/paho_mqtt_embedded_c/platform/timer_interface.c</file>

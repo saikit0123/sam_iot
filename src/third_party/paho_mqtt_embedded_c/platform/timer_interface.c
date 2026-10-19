@@ -198,7 +198,7 @@ void TimerCountdown(Timer *timer, unsigned int timeout)
  */
 int TimerLeftMS(Timer *timer)
 {
-    return 600;
+    return 100;
 #if 0
 	int result_ms = 0;
 	struct timeval time_now;
