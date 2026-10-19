@@ -166,7 +166,7 @@ static void osalTimerReload( tMcuMgrSphereMsg* sphereMsg )
 
     WDRV_WINC_Tasks(sysObj.drvWifiWinc);
 
-    if( fsm_getCurrentState() == WIFI_MGR_CLOUD_WIFI_CONNECTED )
+    if( fsm_getCurrentState() == WIFI_MGR_CLOUD_WIFI_CONNECTED && counter==0 )
     {
         static uint16_t number=0;
         cloud_publish_msg(number++);
